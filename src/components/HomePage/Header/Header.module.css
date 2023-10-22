@@ -1,0 +1,6 @@
+.header {
+  @apply relative flex flex-col gap-2 pb-px w-full h-40 justify-center items-center;
+}
+/* .header:hover {
+  @apply border-green-500 border-solid border-2;
+} */

@@ -1,0 +1,6 @@
+.main {
+  @apply flex h-full w-1/5 justify-center items-center;
+}
+/* .main:hover {
+  @apply border-red-500 border;
+} */

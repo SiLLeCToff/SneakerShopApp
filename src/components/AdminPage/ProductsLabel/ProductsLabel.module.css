@@ -1,0 +1,4 @@
+.mainBlock {
+    @apply flex justify-between gap-2 items-center
+    w-95% h-full;
+}

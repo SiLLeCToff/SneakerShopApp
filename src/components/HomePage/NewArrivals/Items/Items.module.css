@@ -1,0 +1,51 @@
+/* ----------------------------- ITEMS --------------------------------- */
+.products {
+  @apply flex w-11/12 h-4/6 items-center justify-between gap-4;
+}
+.items {
+  height: 400px;
+}
+.items {
+  @apply flex flex-col items-center justify-center w-80 gap-4 2xl:gap-4 2xl:w-400px 2xl:h-500px;
+}
+
+.items:hover {
+  @apply shadow-xl rounded-xl cursor-pointer;
+}
+
+.photo {
+  @apply flex w-80 h-80 flex-shrink-0 rounded-3xl 2xl:w-80 2xl:h-56 xl:w-64 xl:h-44;
+}
+.photo img {
+  background-size: cover;
+  object-fit: cover;
+  border-radius: 24px;
+  background-color: #efefe;
+}
+.photo img {
+  @apply bg-stone-50;
+}
+.itemsText {
+  @apply mb-2 mt-5 w-10/12 h-16 flex flex-col justify-center items-center;
+}
+
+.modelText {
+  @apply font-light text-xl;
+}
+
+.brandText {
+  @apply font-medium text-xl;
+}
+
+.priceTextSale {
+  @apply flex mt-3 text-xl font-medium;
+}
+.priceTextSale2 {
+  @apply flex text-gray-500 text-xs line-through font-thin;
+}
+
+.priceText {
+  @apply flex font-bold;
+}
+
+/* ----------------------------- ITEMS --------------------------------- */

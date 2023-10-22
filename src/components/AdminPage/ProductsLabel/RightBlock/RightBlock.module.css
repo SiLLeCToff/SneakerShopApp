@@ -1,0 +1,26 @@
+.button {
+  letter-spacing: 1.5px;
+  transition: all 0.5s ease;
+}
+.button {
+  @apply flex justify-center w-28 mt-1 items-center 2xl:h-60% 2xl:px-7 xl:py-4 xl:h-70% sm:py-px sm:px-4 sm:h-80% sm:text-xs sm:rounded-full rounded-full text-white bg-black shadow-sm uppercase  text-base;
+}
+
+.button:active {
+  transform: translateY(2px);
+  transition: 100ms;
+}
+
+.button2 {
+  letter-spacing: 1.5px;
+  transition: all 0.5s ease;
+}
+
+.button2 {
+  @apply flex justify-center w-28 mt-1 items-center 2xl:h-60% 2xl:px-7 xl:py-4 xl:h-70% sm:py-px sm:px-4 sm:h-80% sm:text-xs sm:rounded-full rounded-full text-black border border-black bg-white shadow-sm uppercase  text-base;
+}
+
+.button2:active {
+  transform: translateY(2px);
+  transition: 100ms;
+}

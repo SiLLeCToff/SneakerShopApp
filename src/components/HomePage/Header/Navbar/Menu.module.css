@@ -1,0 +1,14 @@
+.popover-panel {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: white;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+}
+
+/* Показать панель меню, когда родительский элемент с классом "group" находится в состоянии наведения */
+.group:hover .popover-panel {
+  display: block;
+}

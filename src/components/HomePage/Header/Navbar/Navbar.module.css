@@ -1,0 +1,13 @@
+.navbar {
+  @apply flex  z-10   whitespace-nowrap border-black border-opacity-20 gap-6 border-t border-b justify-center items-center w-11/12 mx-10 h-full;
+}
+.drawerUnderMenu {
+  @apply absolute hidden justify-center translate-y-24  items-center  space-y-1 bg-white text-black p-2;
+}
+.navbar span {
+  @apply cursor-pointer font-medium;
+}
+
+.navbar a span:hover {
+  @apply cursor-pointer border-b-2 py-3 border-black;
+}

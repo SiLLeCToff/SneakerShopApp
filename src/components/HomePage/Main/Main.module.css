@@ -1,0 +1,177 @@
+.main {
+  @apply w-full h-full flex flex-col items-center justify-center overflow-hidden;
+}
+.main {
+  background-image: url("../../../images/main-bg-1.jpg");
+  background-size: cover;
+}
+/* .main:hover {
+  @apply border-red-500 border-solid border-2;
+} */
+.top {
+  @apply justify-center w-full items-center h-2/6 flex flex-col;
+}
+
+.middle {
+  @apply w-full flex justify-center items-center h-4/6;
+}
+/* .middle:hover {
+  @apply border-red-500 border-solid border-2;
+} */
+
+.bgSnackers1 {
+  @apply flex justify-center h-full items-center w-2/5;
+}
+/* .bgSnackers1:hover {
+  @apply border-red-500 border-solid border-2;
+} */
+
+.textdiv1 {
+  padding-top: 20px;
+  padding-bottom: 20px;
+  justify-content: center;
+  align-items: center;
+  width: 255px;
+  height: 122px;
+  border-radius: 20px;
+  background: #fff;
+  box-shadow: 0px 7px 15px 0px rgba(0, 0, 0, 0.1);
+}
+
+.textdiv1 {
+  @apply 2xl:-translate-x-28 2xl:-translate-y-48 xl:-translate-y-48;
+}
+.air1 {
+  width: 250%;
+  height: 450%;
+  background: url("../../../images/air1.png"), no-repeat;
+  transform: rotate(25deg) scale(-1, 1) translateX(50%) translateY(-10%);
+
+  background-position: center center;
+  background-size: cover;
+}
+
+.bgSnackers2 {
+  @apply flex justify-center items-center w-2/5 h-full;
+}
+/* .bgSnackers2:hover {
+  @apply border-red-500 border-solid border-2;
+} */
+
+.textdiv2 {
+  padding-top: 20px;
+  padding-bottom: 20px;
+  justify-content: center;
+  align-items: center;
+  width: 255px;
+  height: 122px;
+  border-radius: 20px;
+  background: #fff;
+  box-shadow: 0px 7px 15px 0px rgba(0, 0, 0, 0.1);
+}
+
+.textdiv2 {
+  @apply 2xl:translate-x-20  2xl:translate-y-24;
+}
+
+.air2 {
+  width: 250%;
+  height: 450%;
+  background: url("../../../images/air2.png"), no-repeat;
+  transform: rotate(-15deg) translateX(0%) scale(1, 1) translateY(-65%);
+
+  background-position: center center;
+  background-size: cover;
+}
+
+/* TEXT */
+
+.brand {
+  padding-left: 80px;
+  margin-bottom: 7px;
+  font-variant-numeric: lining-nums proportional-nums;
+  font-feature-settings: "clig" off, "liga" off;
+  font-family: Rubik;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 300;
+  line-height: normal;
+  text-transform: uppercase;
+  display: flex;
+  width: 100%;
+}
+
+.description {
+  display: flex;
+  padding-left: 80px;
+  padding-right: 20px;
+  margin-bottom: 17px;
+  font-variant-numeric: lining-nums proportional-nums;
+  font-feature-settings: "clig" off, "liga" off;
+  font-family: Rubik;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  width: 100%;
+  justify-content: center;
+}
+
+.price {
+  display: flex;
+  padding-right: 20px;
+  justify-content: flex-end;
+  font-variant-numeric: lining-nums proportional-nums;
+  font-feature-settings: "clig" off, "liga" off;
+  font-family: Rubik;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+  width: 100%;
+}
+
+.brand2 {
+  padding-left: 20px;
+  margin-bottom: 7px;
+  font-variant-numeric: lining-nums proportional-nums;
+  font-feature-settings: "clig" off, "liga" off;
+  font-family: Rubik;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 300;
+  line-height: normal;
+  text-transform: uppercase;
+  display: flex;
+  width: 100%;
+}
+
+.description2 {
+  display: flex;
+  padding-left: 20px;
+  padding-right: 80px;
+  margin-bottom: 17px;
+  font-variant-numeric: lining-nums proportional-nums;
+  font-feature-settings: "clig" off, "liga" off;
+  font-family: Rubik;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  width: 100%;
+  justify-content: center;
+}
+
+.price2 {
+  display: flex;
+  padding-left: 20px;
+  justify-content: flex-start;
+  font-variant-numeric: lining-nums proportional-nums;
+  font-feature-settings: "clig" off, "liga" off;
+  font-family: Rubik;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+  width: 100%;
+}

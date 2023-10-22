@@ -1,0 +1,18 @@
+.news {
+  @apply w-full flex justify-center items-center h-9 bg-black gap-5;
+}
+
+.news span {
+  @apply font-normal text-white;
+}
+
+.news a {
+  @apply p-1 rounded-full justify-center items-center cursor-pointer;
+}
+.news a:hover {
+  @apply bg-white bg-opacity-20;
+}
+
+.news img {
+  @apply w-4 h-4 cursor-pointer;
+}

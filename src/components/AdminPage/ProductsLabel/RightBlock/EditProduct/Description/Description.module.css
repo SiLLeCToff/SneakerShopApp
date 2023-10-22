@@ -1,0 +1,22 @@
+.scrollMenu {
+  @apply flex flex-wrap justify-start w-90% h-300px items-start overflow-y-auto;
+}
+
+/* /////////////////////////// DELETE SCROLL-BAR START /////////////////////////// */
+.scrollMenu {
+  scrollbar-width: thin; /* Firefox */
+  -ms-overflow-style: none; /* Internet Explorer 10+ */
+}
+
+.scrollMenu::-webkit-scrollbar {
+  width: 0.5em; /* Ширина скроллбара в браузерах WebKit */
+}
+
+.scrollMenu::-webkit-scrollbar-thumb {
+  background-color: transparent; /* Прозрачный фон ползунка скроллбара */
+}
+
+.scrollMenu::-webkit-scrollbar-track {
+  background-color: transparent; /* Прозрачный фон трека скроллбара */
+}
+/* /////////////////////////// DELETE SCROLL-BAR END /////////////////////////// */

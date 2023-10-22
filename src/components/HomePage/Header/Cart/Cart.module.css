@@ -1,0 +1,19 @@
+.main {
+  @apply items-center flex justify-between w-11/12;
+}
+
+.search {
+  @apply p-1 rounded-md cursor-pointer;
+}
+
+.search:hover {
+  @apply bg-gray-100 bg-opacity-80;
+}
+
+.cart {
+  @apply p-1 rounded-md cursor-pointer;
+}
+
+.cart:hover {
+  @apply bg-gray-100 bg-opacity-80;
+}

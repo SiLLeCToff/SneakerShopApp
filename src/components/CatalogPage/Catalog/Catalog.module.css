@@ -1,0 +1,11 @@
+.container {
+    @apply flex w-full h-full flex-col justify-start items-center
+}
+
+.header {
+    @apply flex w-11/12 h-20 items-center border-black border-opacity-20 border-b
+}
+
+.main {
+    @apply flex w-11/12
+}

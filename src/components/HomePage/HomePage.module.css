@@ -1,0 +1,7 @@
+.mains {
+  @apply w-full h-screen flex flex-col;
+}
+
+/* .mains:hover {
+  @apply border-green-500 border-solid border-2;
+} */

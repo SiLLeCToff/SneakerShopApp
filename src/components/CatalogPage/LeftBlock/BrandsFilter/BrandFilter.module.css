@@ -1,0 +1,9 @@
+.rotateDown {
+    transform: rotate(90deg);
+    transition: transform 0.3s ease; /* Добавляем анимацию вращения */
+}
+
+.notRotate {
+    transform: rotate(0deg);
+    transition: transform 0.3s ease; /* Добавляем анимацию вращения */
+}

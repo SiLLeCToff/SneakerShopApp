@@ -1,0 +1,53 @@
+.items {
+  @apply flex w-full h-full justify-center gap-7 flex-wrap overflow-y-auto 2xl:max-h-600px xl:max-h-500px md:max-h-300px sm:max-h-100px p-3;
+}
+
+.item {
+  @apply cursor-default flex w-250px 2xl:w-250px  h-72 2xl:h-72 xl:h-60 xl:w-52 flex-col justify-between items-start rounded-3xl box-border p-3 border border-stone-200 active:border-stone-500 active:shadow-inner;
+}
+
+.item img {
+  background-size: cover;
+  object-fit: cover;
+}
+
+.item img {
+  @apply rounded-3xl bg-stone-50 2xl:h-40 2xl:w-56 xl:h-32 xl:w-44;
+}
+
+/* Firefox */
+.items {
+  scrollbar-width: thin;
+  scrollbar-color: #0d0d0d #ededed;
+}
+
+/* Chrome, Edge and Safari */
+.items::-webkit-scrollbar {
+  height: 5px;
+  width: 5px;
+}
+.items::-webkit-scrollbar-track {
+  border-radius: 20px;
+  background-color: #ededed;
+}
+
+.items::-webkit-scrollbar-track:hover {
+  background-color: #ededed;
+}
+
+.items::-webkit-scrollbar-track:active {
+  background-color: #ededed;
+}
+
+*::-webkit-scrollbar-thumb {
+  border-radius: 5px;
+  background-color: #0d0d0d;
+}
+
+*::-webkit-scrollbar-thumb:hover {
+  background-color: #0d0d0d;
+}
+
+*::-webkit-scrollbar-thumb:active {
+  background-color: #0d0d0d;
+}

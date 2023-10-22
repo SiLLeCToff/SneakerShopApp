@@ -1,0 +1,52 @@
+.main {
+  @apply flex cursor-default flex-col justify-center py-3  items-center w-screen h-screen xl:h-screen xl:w-full sm:w-screen sm:h-screen 2xl:w-screen 2xl:h-screen bg-slate-900;
+}
+
+.navbarBlock {
+  @apply flex justify-center items-center w-full xl:h-100px sm:h-14;
+}
+
+.navbar {
+  @apply flex items-center px-8 justify-between w-95% h-5/6 bg-white rounded-full;
+}
+
+.navbar .logo {
+  @apply flex w-auto justify-between items-center  gap-4;
+}
+.navbar .buttons {
+  @apply flex w-auto gap-9 xl:gap-3 md:gap-5;
+}
+
+.navbar a {
+  @apply flex justify-between items-center pr-1 relative gap-2 h-full  active:font-bold;
+}
+
+.navbar a {
+  padding-bottom: 25px;
+  padding-top: 25px;
+}
+
+.navbar a::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0; /* Начальная ширина линии */
+  height: 3px; /* Высота линии */
+  background-color: transparent;
+  border-radius: 1000px; /* Радиус закругления линии */
+  transition: width 0.3s ease; /* Анимация изменения ширины */
+}
+
+.navbar a:hover::after,
+.navbar .active::after {
+  width: 100%; /* Увеличиваем ширину линии до 100% при наведении */
+  background-color: #000; /* Цвет линии при наведении или активации */
+}
+.navbar .active {
+  @apply font-bold;
+}
+
+.navbar .profile {
+  @apply flex w-auto hover:transition-all transition-all items-center p-1 justify-between 2xl:gap-3 rounded-full cursor-pointer;
+}
