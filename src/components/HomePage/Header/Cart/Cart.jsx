@@ -25,6 +25,10 @@ export const Cart = () => {
     navigate("/login");
   };
 
+  const handleRedirectToBasket = () => {
+      navigate("/basket")
+  }
+
   return (
     <div className={styles.main}>
       <div className={styles.search}>
@@ -43,9 +47,11 @@ export const Cart = () => {
         ) : (
           <Button onClick={redirectToLoginPage}>Войти</Button>
         )}
-        <div className={styles.cart}>
+        <div className={styles.cart}
+        onClick={handleRedirectToBasket}
+        >
           <Badge
-            badgeContent={4}
+            badgeContent={0}
             anchorOrigin={{
               vertical: "bottom",
               horizontal: "right",

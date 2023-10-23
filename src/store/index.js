@@ -4,6 +4,7 @@ import propsSlice from "./propsSlice";
 import sneakersSlice from "./sneakersSlice";
 import brandSlice from "./brandSlice";
 import paginationSlice from "./paginationSlice.jsx";
+import basketSlice from "./basketSlice.jsx";
 
 export default configureStore({
   reducer: {
@@ -12,5 +13,6 @@ export default configureStore({
     sneakers: sneakersSlice,
     brand: brandSlice,
     pagination: paginationSlice,
+    basket: basketSlice,
   },
 });

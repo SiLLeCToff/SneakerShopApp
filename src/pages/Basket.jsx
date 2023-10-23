@@ -1,7 +1,8 @@
 import React from "react";
+import BasketPage from "../components/BasketPage/BasketPage.jsx";
 
 const Basket = () => {
-  return <div>Basket</div>;
+  return <BasketPage />
 };
 
 export default Basket;

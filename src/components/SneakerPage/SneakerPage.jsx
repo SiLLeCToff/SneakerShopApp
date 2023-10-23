@@ -9,6 +9,7 @@ import {useDispatch, useSelector} from "react-redux";
 import {getAllBrands} from "../../store/BrandActions.jsx";
 import {setBrands} from "../../store/brandSlice.jsx";
 import styles from './SneakerPage.module.css'
+import {postItemToBasket} from "../../store/BasketActions.jsx";
 
 
 const images = [
@@ -21,6 +22,7 @@ const images = [
 const SneakerPage = () => {
     const location = useLocation()
     const dispatch = useDispatch()
+    const userId = useSelector((state)=> state.auth.user)
     const urlParts = location.pathname.split("/"); // Разбиваем URL на части по "/"
     const brandLocation = parseInt(urlParts[urlParts.length - 1]);
     const [currentIndex, setCurrentIndex] = useState(0);
@@ -59,6 +61,17 @@ const SneakerPage = () => {
             dispatch(noLoading())
         }
 
+    }
+
+    const handleAddToBasket = async () => {
+    try {
+        const user = userId;
+        const snackerId = itemInfo.id;
+        const response = await postItemToBasket({snackerId, user})
+        console.log(response)
+    } catch (error) {
+        console.error("Не удалось отправить товар в корзину:", error)
+    }
     }
 
 
@@ -103,6 +116,7 @@ const SneakerPage = () => {
                         <p className="flex font-normal text-4xl">{itemInfo.price}Руб</p>
                         <p className="text-left text-xl font-light">Все налоги и таможенные пошлины включены. Стоимость доставки рассчитывается на этапе оформления заказа.</p>
                         <Sizes/>
+                        <button onClick={handleAddToBasket} className="flex bg-black text-white border border-black rounded-3xl py-3 px-5 hover:bg-white hover:text-black">Добавить в Корзину</button>
                     </div>
                 </div>
             </div>

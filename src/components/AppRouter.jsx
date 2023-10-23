@@ -41,6 +41,7 @@ export const AppRouter = () => {
 
   if (!isAuthChecked) {
     return <IsLoading />;
+
   }
 
   const renderProtectedRoutes = () => {
