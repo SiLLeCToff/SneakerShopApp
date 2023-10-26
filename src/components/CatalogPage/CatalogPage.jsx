@@ -11,7 +11,7 @@ const CatalogPage = () => {
     const dispatch = useDispatch();
 
     useEffect(() => {
-        getAllBrands()
+        // getAllBrands()
         getAllSneakers(dispatch)
 
     }, []);

@@ -3,7 +3,7 @@
 }
 
 .header {
-    @apply flex w-11/12 h-20 items-center border-black border-opacity-20 border-b
+    @apply flex w-11/12 h-20  items-center border-black border-opacity-20 border-b
 }
 
 .main {

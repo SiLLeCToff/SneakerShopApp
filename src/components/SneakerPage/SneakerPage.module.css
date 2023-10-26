@@ -1,9 +1,6 @@
 
 
 .imageItem {
-    @apply flex  border-black rounded-2xl w-[550px] h-[450px]
+    @apply flex  border-black rounded-3xl w-[550px] h-[450px] bg-cover object-contain
 }
-.imageItem {
-    background-size: cover;
-    object-fit: cover;
-}
+

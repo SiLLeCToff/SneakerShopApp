@@ -71,7 +71,7 @@ export default function BrandsCheckBoxes() {
                         />
                     </div>
                     <div className="flex ml-2 text-sm leading-6">
-                        <label htmlFor={brand.id} className="font-light text-gray-900 text-xl cursor-pointer">
+                        <label htmlFor={brand.id} className="font-light text-gray-900 text-xl cursor-pointer whitespace-nowrap">
                             {brand.name}
                         </label>
                     </div>

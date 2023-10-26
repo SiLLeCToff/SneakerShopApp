@@ -1,29 +1,28 @@
 /* ----------------------------- ITEMS --------------------------------- */
 .products {
-  @apply flex w-11/12 h-4/6 items-center justify-between gap-4;
+  @apply flex w-11/12 md:h-4/6 sm:h-4/6 max-sm:h-3/6  items-center justify-between gap-4 md:overflow-x-hidden overflow-y-hidden sm:overflow-x-auto max-sm:overflow-x-auto;
 }
 .items {
   height: 400px;
 }
 .items {
-  @apply flex flex-col items-center justify-center w-80 gap-4 2xl:gap-4 2xl:w-400px 2xl:h-500px;
+  @apply flex flex-col items-center justify-center w-80 md:my-10 sm:my-5 gap-4 2xl:gap-4 2xl:w-400px 2xl:h-500px max-sm:h-[340px] max-sm:w-[200px];
 }
 
 .items:hover {
-  @apply shadow-xl rounded-xl cursor-pointer;
+  @apply md:shadow-xl md:rounded-xl cursor-pointer;
 }
 
 .photo {
-  @apply flex w-80 h-80 flex-shrink-0 rounded-3xl 2xl:w-80 2xl:h-56 xl:w-64 xl:h-44;
+  @apply flex w-80 h-80 flex-shrink-0 rounded-3xl 2xl:w-80 2xl:h-56 xl:w-[300px] xl:h-[200px] max-sm:w-[200px] max-sm:h-[200px];
 }
 .photo img {
   background-size: cover;
-  object-fit: cover;
   border-radius: 24px;
   background-color: #efefe;
 }
 .photo img {
-  @apply bg-stone-50;
+  @apply bg-stone-50 object-contain;
 }
 .itemsText {
   @apply mb-2 mt-5 w-10/12 h-16 flex flex-col justify-center items-center;
@@ -49,3 +48,22 @@
 }
 
 /* ----------------------------- ITEMS --------------------------------- */
+
+
+
+
+/* Firefox */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: #397524 #DFE9EB;
+}
+
+/* Chrome, Edge and Safari */
+*::-webkit-scrollbar {
+  height: 0px;
+  width: 0px;
+}
+*::-webkit-scrollbar-track {
+  border-radius: 0px;
+  background-color: #DFE9EB;
+}

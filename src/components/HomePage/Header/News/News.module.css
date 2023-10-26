@@ -1,5 +1,5 @@
 .news {
-  @apply w-full flex justify-center items-center h-9 bg-black gap-5;
+  @apply w-full flex justify-center items-center xl:h-9 sm:h-6 bg-black gap-5;
 }
 
 .news span {

@@ -3,14 +3,10 @@ import {createSlice} from "@reduxjs/toolkit";
 
 const basketSlice = createSlice({
     name: "basket",
-    initialState: {
-        id: null,
-        items: [],
-    },
+    initialState: [],
     reducers: {
-        getBasket: (state, action) => {
-        state.id = action.payload.id;
-        state.items = action.payload.items;
+        setBasket: (state, action) => {
+        return  action.payload;
 }
     }
 
@@ -18,7 +14,7 @@ const basketSlice = createSlice({
 
 
 export const  {
-    getBasket
+    setBasket
 } = basketSlice.actions
 
 export default basketSlice.reducer

@@ -1,5 +1,5 @@
 .mains {
-  @apply w-full h-screen flex flex-col;
+  @apply w-full h-screen flex flex-col relative;
 }
 
 /* .mains:hover {

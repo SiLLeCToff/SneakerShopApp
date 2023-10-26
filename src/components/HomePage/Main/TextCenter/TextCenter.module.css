@@ -1,5 +1,5 @@
 .main {
-  @apply flex h-full w-1/5 justify-center items-center;
+  @apply flex justify-center items-center  sm:items-end sm:mb-10 max-sm:items-end max-sm:mb-10;
 }
 /* .main:hover {
   @apply border-red-500 border;

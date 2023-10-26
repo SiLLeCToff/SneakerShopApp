@@ -12,25 +12,11 @@ export const TextCenter = () => {
     }
   return (
     <div className={styles.main}>
-      <Button onClick={handleClick}
-        variant="contained"
-        sx={{
-          backgroundColor: "black",
-          display: "inline-flex",
-          paddingY: "18px",
-          paddingX: "36px",
-          justifyContent: "center",
-          alignItems: "center",
-          gap: "10px",
-          whiteSpace: "nowrap",
-          borderRadius: "50px",
-          marginTop: "100px",
-          fontFamily: "Rubik",
-        }}
-        endIcon={<Arrow />}
+      <button onClick={handleClick}
+              className="flex z-10  whitespace-nowrap bg-black text-white items-center justify-center gap-2 py-3 px-4 rounded-3xl border border-black hover:bg-white hover:text-black"
       >
         Смотреть каталог
-      </Button>
+      <Arrow/></button>
     </div>
   );
 };

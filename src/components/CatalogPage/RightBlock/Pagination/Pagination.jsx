@@ -127,8 +127,7 @@ export const Pagination = () => {
             dispatch(setCurrentPage(1));
         }
     }, [totalItems, totalPages]);
-    console.log(totalPages)
-    console.log(currentPage)
+
 
 
     return (

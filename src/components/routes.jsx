@@ -1,7 +1,7 @@
 import {
   ADMIN_ROUTE,
   BASKET_ROUTE, CATALOG_ROUTE,
-  LOGIN_ROUTE,
+  LOGIN_ROUTE, ORDER_ROUTE,
   REGISTRATION_ROUTE,
   SHOP_ROUTE,
   SNACKER_ROUTE,
@@ -12,12 +12,10 @@ import Basket from "../pages/Basket";
 import Shop from "../pages/Shop";
 import SnackerPage from "../pages/Sneacker.jsx";
 import Catalog from "../pages/Catalog.jsx";
+import Order from "../pages/Order.jsx";
 
 export const authRoutes = [
-  {
-    path: BASKET_ROUTE,
-    Component: <Basket />,
-  },
+
 ];
 
 export const adminRoutes = [
@@ -47,5 +45,13 @@ export const publicRoutes = [
   {
     path: CATALOG_ROUTE,
     Component: <Catalog/>,
-  }
+  },
+  {
+    path: ORDER_ROUTE,
+    Component: <Order />,
+  },
+  {
+    path: BASKET_ROUTE,
+    Component: <Basket />,
+  },
 ];

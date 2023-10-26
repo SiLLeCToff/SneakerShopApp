@@ -14,8 +14,8 @@ const Catalog = () => {
     return (
         <div className={styles.container}>
             <div className={styles.header}>
-                <div> Bread Crumbs</div>
-                <h1 className="flex-1 text-2xl">Кросовки</h1>
+                <div className="flex w-1/3"> Bread Crumbs</div>
+                <h1 className="flex text-2xl w-1/3 justify-center">Кросовки</h1>
             </div>
             <div className={styles.main}>
                 <LeftBlock onFilteredSneakersChange={onFilteredSneakersChange}/>

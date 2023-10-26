@@ -3,14 +3,11 @@ import {ChevronRightIcon} from "@heroicons/react/24/outline/index.js";
 import styles from "./Sizes.module.css"
 const Sizes = () => {
     const [open, setOpen] = useState(true)
-    const [activeFilters, setActiveFilters] = useState([]);
+    const [activeFilters, setActiveFilters] = useState('');
 
     const handleFilterClick = (filter) => {
-        if (activeFilters.includes(filter)) {
-            setActiveFilters(activeFilters.filter((item) => item !== filter));
-        } else {
-            setActiveFilters([...activeFilters, filter]);
-        }
+
+            setActiveFilters(filter);
     };
 
 
@@ -35,7 +32,7 @@ const Sizes = () => {
                 </div>
             </div>
 
-                <div className="flex flex-wrap w-full gap-3 border-b pb-4 justify-start items-center mb-10 ">
+                <div className="flex flex-wrap w-full gap-3 border-b pb-4 justify-center items-center mb-10 ">
                     {availableFilters.map((filter, index) => <div key={index}
                                                                   onClick={() => handleFilterClick(filter)}
                                                                   // className={`flex 2xl:w-[200px] 2xl:h-[100px] md:w-12 md:h-12 h-10 w-10 border border-solid rounded-xl cursor-pointer justify-center items-center ${activeFilters.includes(filter) ? 'border-black border-2' : 'border-gray-200'}`}

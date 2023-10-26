@@ -46,7 +46,7 @@ const RightBlock = () => {
                             <p className="font-medium">
                                 {brands.find(brand => brand.id === item.brandId) ? brands.find(brand => brand.id === item.brandId).name : ''} {item.name}
                             </p>
-                            <p className="opacity-60">{item.price}руб</p>
+                            <p className="opacity-60">{item.price.toLocaleString('ru-RU')} руб</p>
                             <div className="flex">
 
                             </div>

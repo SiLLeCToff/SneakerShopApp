@@ -2,7 +2,7 @@ import React from "react";
 import { SHOP_ROUTE } from "../utils/consts";
 import { useLocation } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
-import { loginUser } from "../store/AuthActions";
+import {loginUser, registrationUser} from "../store/AuthActions";
 import { useState } from "react";
 
 export default function Auth() {
@@ -25,6 +25,22 @@ export default function Auth() {
       );
     }
   };
+
+  const handleRegistration = async (e) => {
+    e.preventDefault();
+
+    try {
+      // Диспетчеризуйте действие loginUser
+      const response = await dispatch(registrationUser(email, password));
+    } catch (error) {
+      console.error(
+          "Authentication error:",
+          error.response?.data?.error || "Неизвестная ошибка"
+      );
+    }
+  };
+
+
 
   const login = location.pathname === "/login" ? true : false;
 
@@ -125,6 +141,7 @@ export default function Auth() {
               <form className="space-y-6" action="/" method="POST">
                 <div>
                   <label
+
                     htmlFor="email"
                     className="block text-sm font-medium leading-6 text-gray-900"
                   >
@@ -132,6 +149,7 @@ export default function Auth() {
                   </label>
                   <div className="mt-2">
                     <input
+                        onChange={(e) => setEmail(e.currentTarget.value)}
                       id="email"
                       name="email"
                       type="email"
@@ -144,6 +162,7 @@ export default function Auth() {
 
                 <div>
                   <label
+
                     htmlFor="password"
                     className="block text-sm font-medium leading-6 text-gray-900"
                   >
@@ -151,6 +170,7 @@ export default function Auth() {
                   </label>
                   <div className="mt-2">
                     <input
+                        onChange={(e) => setPassword(e.currentTarget.value)}
                       id="password"
                       name="password"
                       type="password"
@@ -163,7 +183,7 @@ export default function Auth() {
 
                 <div>
                   <button
-                    type="submit"
+                      onClick={(e) => handleRegistration(e)}
                     className="flex w-full justify-center rounded-md bg-indigo-600 px-3 py-1.5 text-sm font-semibold leading-6 text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
                   >
                     Зарегистрироваться

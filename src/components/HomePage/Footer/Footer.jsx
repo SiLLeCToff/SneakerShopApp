@@ -2,7 +2,7 @@ import React from "react";
 
 export const Footer = () => {
   return (
-    <div className="flex flex-col w-full bg-black h-300px justify-center items-center">
+    <div className="flex flex-col w-full bg-black justify-center items-center">
       <div className="flex xl:flex-row max-sm:flex-wrap gap-x-2 sm:flex-wrap 2xl:gap-0 xl:gap-x-s5 mt-5 md:gap-x-5  w-11/12 h-5/6  justify-between items-start  text-white">
         <div className="flex flex-col 2xl:w-1/4 max-sm:w-1/2  h-auto gap-y-3 ">
           <h3 className="font-medium text-xl mb-2">ПОМОЩЬ</h3>

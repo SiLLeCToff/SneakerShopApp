@@ -1,5 +1,5 @@
 .main {
-  @apply w-full h-screen flex flex-col justify-center items-center pt-2;
+  @apply w-full md:h-full xl:gap-0 sm:gap-5 my-3 max-sm:gap-2 flex flex-col justify-center items-center pt-2;
 }
 
 .text {

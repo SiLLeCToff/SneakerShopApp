@@ -41,7 +41,7 @@ const handleRedirect = (id) => {
           {/* -------------- 1 ITEM ------------- */}
 
           {items.slice(0, 4).map((item, index) => (
-              <div key={index} className={styles.items} onClick={() =>handleRedirect(item.id)}>
+              <div key={item.id} className={styles.items} onClick={() =>handleRedirect(item.id)}>
                 <div className={styles.photo}>
                   <img src={`http://localhost:4500/${item.img}`} alt="photo"/>
                 </div>
@@ -50,7 +50,7 @@ const handleRedirect = (id) => {
                       className={styles.brandText}>{brands && brands.find((brand)  => brand.id === item.brandId).name}</span>
                   <span className={styles.modelText}>{item.name}</span>
                   <div className="flex gap-3">
-                    <span className={styles.priceTextSale}>{item.price} Руб</span>
+                    <span className={styles.priceTextSale}>{item.price.toLocaleString('ru-RU')} Руб</span>
                     {/* <span className={styles.priceTextSale2}>40.000 Руб</span> */}
                   </div>
                 </div>

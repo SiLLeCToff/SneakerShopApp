@@ -5,3 +5,5 @@ export const SHOP_ROUTE = "/";
 export const BASKET_ROUTE = "/basket";
 export const SNACKER_ROUTE = "/snacker";
 export const CATALOG_ROUTE = "/catalog";
+
+export const ORDER_ROUTE = "/order";
