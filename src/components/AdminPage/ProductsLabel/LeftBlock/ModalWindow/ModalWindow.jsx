@@ -49,10 +49,39 @@ export default function ModalWindow({ open, setOpen }) {
 
     }
   }, [open]);
+
+
+
   const [price, setPrice] = useState(0);
   const [name, setName] = useState("");
-  const [brand, setBrand] = useState("")
-  //   console.log(name);
+  const [brand, setBrand] = useState("");
+
+  const initialInputStates = {
+    38: 0,
+    39: 0,
+    40: 0,
+    41: 0,
+    42: 0,
+    43: 0,
+    44: 0,
+    45: 0,
+  };
+
+  const [inputStates, setInputStates] = useState(initialInputStates);
+  const sizes = [
+    { size: 38, quantity: inputStates[38] },
+    { size: 39, quantity: inputStates[39] },
+    { size: 40, quantity: inputStates[40] },
+    { size: 41, quantity: inputStates[41] },
+    { size: 42, quantity: inputStates[42] },
+    { size: 43, quantity: inputStates[43] },
+    { size: 44, quantity: inputStates[44] },
+    { size: 45, quantity: inputStates[45] },
+  ];
+
+
+  const sizesJSON = JSON.stringify(sizes);
+
   const [imageURL, setImageURL] = useState(null);
   const [file, setFile] = useState(null);
   const [idBrand, setIdBrand] = useState(1);
@@ -70,6 +99,8 @@ export default function ModalWindow({ open, setOpen }) {
       formData.append("price", `${price}`);
       formData.append("brandId", `${idBrand}`);
       formData.append("img", file);
+      formData.append("sizes", sizesJSON);
+
       const token = localStorage.getItem("token");
       const response = await axios.post(
         "http://localhost:4500/api/snacker",
@@ -86,8 +117,8 @@ export default function ModalWindow({ open, setOpen }) {
           },
         }
       );
-      if (response === 200) {
-        console.log(Успешно);
+      if (response.status === 200) {
+        console.log('Успешно');
       }
     } catch (error) {
       console.error("Не удалось добавить товар:", error);
@@ -257,6 +288,29 @@ export default function ModalWindow({ open, setOpen }) {
                         onChange={(e) => setPrice(e.currentTarget.value)}
                         className="py-1 px-2 flex w-90% border rounded-xl border-stone-200 text-sm font-normal box-content"
                     />
+                    <div>
+                      <h2 className="flex py-4">Количество товара</h2>
+                      <input type="number" className="py-1 pl-2 flex w-[65px] border border-stone-200 rounded-lg text-sm font-normal box-content"/>
+                    </div>
+                    <div  className="flex w-full items-center justify-start gap-4 flex-wrap">
+                      {sizes.map((item, index) => <div key={index} className="flex justify-center items-center gap-1">
+                        <p className="pl-2 flex text-sm font-light">{item.size}</p>
+                        <input
+                            type="number"
+                            placeholder="Размер"
+                            value={inputStates[item.size]}
+                            onChange={(e) => {
+                              const newSize = parseInt(e.target.value);
+                              setInputStates((prevInputStates) => ({
+                                ...prevInputStates,
+                                [item.size]: isNaN(newSize) ? 0 : newSize,
+                              }));
+                            }}
+                            min="0"
+                            className="py-1 pl-2 flex w-[65px] border border-stone-200 rounded-lg text-sm font-normal box-content"
+                        />
+                      </div>)}
+                    </div>
                   </div>
                 </div>}
 
