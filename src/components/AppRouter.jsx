@@ -19,14 +19,46 @@ import { ADMIN_ROUTE, LOGIN_ROUTE, SHOP_ROUTE } from "../utils/consts";
 import IsLoading from "./IsLoading/IsLoading";
 import { authRoutes, adminRoutes, publicRoutes } from "./routes";
 import {getAllBrands} from "../store/BrandActions.jsx";
+import {getBasket} from "../store/BasketActions.jsx";
+import axios from "axios";
+import {setBasket} from "../store/basketSlice.jsx";
+import {setBrands} from "../store/brandSlice.jsx";
 
 export const AppRouter = () => {
   const isAuth = useSelector((state) => state.auth.isAuthenticated);
   const loading = useSelector((state) => state.auth.isLoading);
   const userRole = useSelector((state) => state.auth.role);
   const [isAuthChecked, setIsAuthChecked] = useState(false);
+  const user = useSelector((state)=> state.auth.user)
+
 
   const dispatch = useDispatch();
+
+
+  const getBasketUserAndBrands = async (user) => {
+    try {
+      const token = localStorage.getItem("token")
+      const responseBrands = await getAllBrands();
+
+      const response = await axios.get(`http://localhost:4500/api/basket/${user}`,
+          {
+            headers: {
+              Authorization: `Bearer ${token}`,
+            }
+          }
+      )
+      dispatch(setBrands(responseBrands))
+      if(response.status === 200) {
+        const items = response.data
+        dispatch(setBasket(items))
+        return response.data
+
+      }
+    } catch (error) {
+      console.error("Не удалось получить корзину:", error)
+    }
+  }
+
   useEffect(() => {
     const checkAuthentication = async () => {
       try {
@@ -37,7 +69,10 @@ export const AppRouter = () => {
       }
     };
     checkAuthentication();
-  }, [dispatch]);
+  if (user !== null || undefined) {
+    getBasketUserAndBrands(user)
+  }
+  }, [dispatch, user]);
 
   if (!isAuthChecked) {
     return <IsLoading />;
@@ -71,8 +106,14 @@ export const AppRouter = () => {
             path="/login"
             element={<Navigate to={SHOP_ROUTE} />}
             exact
-          />
-        )}
+          />)}
+        {isAuth && (<Route
+          key={"/registration"}
+        path="/registration"
+        element={<Navigate to={SHOP_ROUTE} />}
+        exact
+      />)}
+
         {publicRoutes.map(({ path, Component }) => (
           <Route key={path} path={path} element={Component} exact />
         ))}
