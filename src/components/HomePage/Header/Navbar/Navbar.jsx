@@ -5,7 +5,7 @@ import {useNavigate} from "react-router-dom";
 
 export const Navbar = ({open}) => {
   const navigate = useNavigate()
-  const [isSubMenuVisible, setIsSubMenuVisible] = useState(true);
+  const [isSubMenuVisible, setIsSubMenuVisible] = useState(false);
 
   return (
 <>
