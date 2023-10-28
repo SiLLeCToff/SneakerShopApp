@@ -11,9 +11,7 @@ export const Items = () => {
   const items = useSelector((state) => state.sneakers.filteredSneakers);
   const brands = useSelector((state)=> state.brand)
     const navigate = useNavigate()
-    const filteredDataItems = items.map(product => ({ ...product, createdAt: new Date(product.createdAt) }))
-        .sort((a, b) => b.createdAt - a.createdAt);
-
+    const filteredDataItems = items.filter(product => product.name.includes("Jordan"));
 
   const dispatch = useDispatch();
 

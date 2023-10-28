@@ -7,6 +7,8 @@ import { NewArrivals } from "./NewArrivals/NewArrivals";
 import {getAllBrands} from "../../store/BrandActions.jsx";
 import {setBrands} from "../../store/brandSlice.jsx";
 import {useDispatch} from "react-redux";
+import {ItemsNike} from "./ItemsNike/ItemsNike.jsx";
+import {ItemsJordan} from "./ItemsJordan/ItemsJordan.jsx";
 
 
 export const HomePage = () => {
@@ -29,6 +31,8 @@ export const HomePage = () => {
           <Main />
       </div>
       <NewArrivals />
+        <ItemsNike/>
+        <ItemsJordan/>
       <Footer />
     </div>
   );

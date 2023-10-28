@@ -5,8 +5,18 @@ import SliderPrice from "../PriceFilter/SliderPrice.jsx";
 
 const SizeFilter = () => {
     const [open, setOpen] = useState(true)
+    const sizes = [
+        { size: 38 },
+        { size: 39 },
+        { size: 40 },
+        { size: 41 },
+        { size: 42 },
+        { size: 43 },
+        { size: 44 },
+        { size: 45 },
+    ];
     const [activeFilters, setActiveFilters] = useState([]);
-
+console.log(activeFilters)
     const handleFilterClick = (filter) => {
         if (activeFilters.includes(filter)) {
             setActiveFilters(activeFilters.filter((item) => item !== filter));
@@ -38,13 +48,13 @@ const SizeFilter = () => {
             </div>
     {open &&
     <div className="flex flex-wrap gap-3 border-b pb-4 justify-center mb-10 ">
-        {availableFilters.map((filter, index) => <div key={index}
-            onClick={() => handleFilterClick(filter)}
-            className={`flex 2xl:w-14 2xl:h-14 md:w-12 md:h-12 h-10 w-10 border border-solid rounded-xl cursor-pointer justify-center items-center ${activeFilters.includes(filter) ? 'border-black border-2' : 'border-gray-200'}`}
+        {sizes.map((filter, index) => <div key={index}
+            onClick={() => handleFilterClick(filter.size)}
+            className={`flex 2xl:w-14 2xl:h-14 md:w-12 md:h-12 h-10 w-10 border border-solid rounded-xl cursor-pointer justify-center items-center ${activeFilters.includes(filter.size) ? 'border-black border-2' : 'border-gray-200'}`}
             //                                           className={`flex 2xl:w-14 2xl:h-14 md:w-12 md:h-12 h-10 w-10  border border-solid rounded-xl cursor-pointer justify-center items-center ${activeFilters.includes(filter) ? 'border-black bg-black text-white' : 'border-gray-200'}`}
         >
 
-            <p>{filter}</p>
+            <p>{filter.size}</p>
         </div>)}
 
     </div>}

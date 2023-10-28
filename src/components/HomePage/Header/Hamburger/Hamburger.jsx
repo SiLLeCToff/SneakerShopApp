@@ -1,17 +1,16 @@
-import React, {useState} from 'react';
+import React, {useEffect, useRef, useState} from 'react';
 import styles from './Hamburger.module.css'
 import {duration} from "@mui/material";
 
 const Hamburger = ({open, handleClick}) => {
 const [checked, setChecked] = useState(false)
-
    const handleClicke = (e) => {
     handleClick(e)
        setChecked(!checked)
    }
 
     return (
-        <>
+        <div>
         <label className={`${styles.hamburger} ${open === true ? 'translate-x-[200px] transition-transform duration-500 delay-200' : 'duration-500'}`} onClick={(e) => handleClicke(e)}>
             <input type="checkbox" readOnly checked={checked} />
                 <svg viewBox="0 0 32 32">
@@ -19,7 +18,7 @@ const [checked, setChecked] = useState(false)
                     <path className={styles.line} d="M7 16 27 16"></path>
                 </svg>
         </label>
-            </>
+            </div>
     );
 };
 

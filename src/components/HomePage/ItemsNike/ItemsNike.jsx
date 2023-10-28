@@ -1,14 +1,14 @@
 import Button from "@mui/material/Button";
 import React from "react";
 import { Items } from "./Items/Items";
-import styles from "./NewArrivals.module.css";
+import styles from "./ItemsNike.module.css";
 import {Pagination} from "../../CatalogPage/RightBlock/Pagination/Pagination.jsx";
 
-export const NewArrivals = () => {
+export const ItemsNike = () => {
   return (
     <div className={styles.main}>
       <h2 className="text-4xl max-w-md font-bold whitespace-nowrap">
-        Новые поступления
+        NIKE Коллекция
       </h2>
       <Items />
       {/* <div className={styles.pages}>1-9</div> */}

@@ -1,13 +1,35 @@
 .navbar {
-  @apply flex  z-10   whitespace-nowrap border-black border-opacity-20 gap-6 border-t border-b justify-center items-center w-11/12 mx-10 h-full;
+  @apply flex relative whitespace-nowrap border-black border-opacity-20 gap-6 border-t border-b justify-center items-center w-11/12 mx-10 h-full;
 }
 .drawerUnderMenu {
-  @apply absolute hidden justify-center translate-y-24  items-center  space-y-1 bg-white text-black p-2;
+  @apply absolute hidden justify-center bg-opacity-90 top-full mt-[px] items-start bg-white text-black p-2;
 }
 .navbar span {
-  @apply cursor-pointer font-medium;
+  @apply cursor-pointer;
 }
 
-.navbar a span:hover {
-  @apply cursor-pointer border-b-2 py-3 border-black;
+.navbar a span {
+  position: relative;
+}
+
+.navbar a span:after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 2px; /* Начальная высота бордера */
+  background-color: black; /* Цвет бордера */
+  transform-origin: bottom right;
+  transform: scaleX(0); /* Изначально устанавливаем нулевую ширину бордера */
+  transition: transform 0.7s ease; /* Добавляем анимацию для плавного изменения ширины бордера */
+}
+
+.navbar a span:hover:after {
+  transform-origin: bottom left;
+  transform: scaleX(1); /* Увеличиваем ширину бордера до конца span при ховере */
+}
+
+.menuItem {
+  @apply xl:mx-2 md:mx-1 xl:w-[20px];
 }

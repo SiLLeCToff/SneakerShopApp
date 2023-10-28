@@ -9,6 +9,7 @@ const initialState = {
     brandId: [],
     minPrice: null,
     maxPrice: null,
+    sizes: [],
   },
 };
 
@@ -37,12 +38,16 @@ const sneakersSlice = createSlice({
         brandId: [],
         minPrice: null,
         maxPrice: null,
+        sizes: [],
       };
       state.filteredSneakers = state.originalSneakers;
     },
     setFiltersDefault: (state, action) => {
       state.filters = action.payload;
 
+    },
+    setSizes: (state, action) => {
+      state.filters.sizes = action.payload;
     },
   },
 });

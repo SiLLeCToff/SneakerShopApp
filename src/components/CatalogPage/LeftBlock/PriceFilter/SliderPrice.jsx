@@ -12,7 +12,7 @@ const AirbnbSlider = styled(Slider)(({ theme }) => ({
     padding: '13px 0',
     '& .MuiSlider-thumb': {
         height: 20,
-        width: 9,
+        width: 6,
         borderRadius: 3,
         backgroundColor: 'rgba(0, 0, 0, 1)',
         border: '1px solid black',
@@ -26,9 +26,10 @@ const AirbnbSlider = styled(Slider)(({ theme }) => ({
     },
     '& .MuiSlider-track': {
         height: 9,
-        color: theme.palette.mode === 'dark' ? 'rgba(0, 0, 0, 1)' : 'rgb(100,100,100)',
+        color: theme.palette.mode === 'dark' ? 'rgba(0, 0, 0, 1)' : 'rgba(207,192,215,0.84)',
     },
     '& .MuiSlider-rail': {
+        outline: 'none',
         color: theme.palette.mode === 'dark' ? '#EFEFEF' : '#EFEFEF',
         opacity: theme.palette.mode === 'dark' ? undefined : 1,
         height: 9,

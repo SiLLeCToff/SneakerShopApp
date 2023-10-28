@@ -234,14 +234,14 @@ export default function ModalWindow({ open, setOpen }) {
                       onClick={handleClickAddBrand}
                       className="flex w-[44%] items-center justify-start flex-col bg-white rounded-3xl cursor-pointer  transform hover:scale-105 transition-transform duration-500 ease-in-out">
                     <img src="src/images/new-balance-2.svg" alt='logoBrand'
-                         className="flex w-full  rounded-3xl  bg-cover"/>
+                         className="flex w-full rounded-3xl h-[300px] bg-cover "/>
                     <p className="font-medium text-3xl">Бренд</p>
                   </div>
                   <div
                       onClick={handleClickAddItem}
                       className="flex w-[44%] items-center justify-start flex-col bg-white rounded-3xl cursor-pointer  transform hover:scale-105 transition-transform duration-500 ease-in-out">
-                    <img src="src/images/itemAdd.jpeg" alt='logoBrand' className="flex w-full  rounded-3xl  bg-cover "/>
-                    <p className="font-medium text-3xl">Товар</p>
+                    <img src="src/images/addItem.png" alt='logoBrand' className="flex w-full h-[300px]  rounded-3xl  bg-cover object-contain"/>
+                    <p className="font-medium text-3xl mt-[20px]">Товар</p>
                   </div>
 
                 </div>}
@@ -289,8 +289,7 @@ export default function ModalWindow({ open, setOpen }) {
                         className="py-1 px-2 flex w-90% border rounded-xl border-stone-200 text-sm font-normal box-content"
                     />
                     <div>
-                      <h2 className="flex py-4">Количество товара</h2>
-                      <input type="number" className="py-1 pl-2 flex w-[65px] border border-stone-200 rounded-lg text-sm font-normal box-content"/>
+                      <h2 className="flex py-4">Количество товара в наличии</h2>
                     </div>
                     <div  className="flex w-full items-center justify-start gap-4 flex-wrap">
                       {sizes.map((item, index) => <div key={index} className="flex justify-center items-center gap-1">
