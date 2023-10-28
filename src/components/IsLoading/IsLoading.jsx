@@ -1,5 +1,5 @@
 import React from "react";
-import styles from "./IsLoading.module.scss";
+import styles from "./IsLoading.module.css";
 
 function IsLoading() {
   return (
