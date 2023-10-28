@@ -81,7 +81,7 @@
 .air2 {
   width: 250%;
   height: 450%;
-  background: url("../../../images/air2.png"), no-repeat;
+  background: url("../../../images/JordanMain.png"), no-repeat;
   transform: rotate(-15deg) translateX(0%) scale(1, 1) translateY(-65%);
 
   background-position: center center;
