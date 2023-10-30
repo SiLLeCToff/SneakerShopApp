@@ -10,6 +10,8 @@ import { useDispatch, useSelector } from "react-redux";
 import { getAllBrands } from "../../../../../store/BrandActions";
 import axios from "axios";
 import {getAllSneakers} from "../../../../../store/SneakersActions.jsx";
+import { getStorage, ref, uploadBytes } from "firebase/storage";
+import firebase from "../../../../../Firebase/firebase.jsx"
 
 const apiUrl = import.meta.env.VITE_REACT_APP_API_URL;
 
@@ -100,7 +102,7 @@ export default function ModalWindow({ open, setOpen }) {
       formData.append("name", name);
       formData.append("price", `${price}`);
       formData.append("brandId", `${idBrand}`);
-      formData.append("img", file);
+      // formData.append("img", file);
       formData.append("sizes", sizesJSON);
 
       const token = localStorage.getItem("token");
@@ -120,6 +122,9 @@ export default function ModalWindow({ open, setOpen }) {
         }
       );
       if (response.status === 200) {
+        const storage = getStorage(firebase); // Используйте инициализированный объект firebase
+        const storageRef = ref(storage, `path/to/${name}.jpg`); // Укажите правильный путь в Firebase Storage
+        await uploadBytes(storageRef, file);
         console.log('Успешно');
       }
     } catch (error) {
