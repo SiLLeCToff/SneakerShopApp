@@ -1,11 +1,12 @@
 import axios from "axios";
 import {setBasket} from "./basketSlice.jsx";
 
+const apiUrl = import.meta.env.VITE_REACT_APP_API_URL;
 
 export const postItemToBasket = (snackerId, user) => async () => {
     try {
         const token = localStorage.getItem("token")
-        const response = await axios.post("http://localhost:4500/api/basket", {snackerId, user},
+        const response = await axios.post(`${apiUrl}api/basket`, {snackerId, user},
             {
                 headers: {
                     Authorization: `Bearer ${token}`,
@@ -25,7 +26,7 @@ export const postItemToBasket = (snackerId, user) => async () => {
 export const getBasket = (user) => async (dispatch) => {
     try {
         const token = localStorage.getItem("token")
-        const response = await axios.get(`http://localhost:4500/api/basket/${user}`,
+        const response = await axios.get(`${apiUrl}api/basket/${user}`,
             {
                 headers: {
                     Authorization: `Bearer ${token}`,
@@ -45,7 +46,7 @@ export const getBasket = (user) => async (dispatch) => {
 export const deleteFromBasket = (itemId, user) => async () => {
     try {
         const token = localStorage.getItem("token")
-        const response = await axios.patch(`http://localhost:4500/api/basket/`, {itemId, user},
+        const response = await axios.patch(`${apiUrl}api/basket/`, {itemId, user},
             {
                 headers: {
                     Authorization: `Bearer ${token}`,

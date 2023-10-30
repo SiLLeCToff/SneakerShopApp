@@ -4,7 +4,7 @@ import { Description } from "./Description/Description";
 import styles from "./EditProduct.module.css";
 import { Inventory } from "./Inventory/Inventory";
 import { Price } from "./Price/Price";
-
+const apiUrl = import.meta.env.VITE_REACT_APP_API_URL;
 export const EditProduct = ({id, price, name}) => {
   const radioMenu = useSelector((state) => state.props.radioMenuA);
   const activeItem = useSelector((state) => state.props.activeItemA);
@@ -14,7 +14,7 @@ export const EditProduct = ({id, price, name}) => {
     <div className={styles.main}>
       {itemName && (
         <img
-          src={`http://localhost:4500/${activeItem.img}`}
+          src={`${apiUrl}${activeItem.img}`}
           alt="image"
           className="flex w-90% 2xl:h-200px h-150px rounded-2xl mb-4 justify-center items-center bg-cover object-cover"
         />

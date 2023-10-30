@@ -1,10 +1,12 @@
 import axios from "axios";
 
+const apiUrl = import.meta.env.VITE_REACT_APP_API_URL;
+
 export const getAllBrands = async () => {
   try {
 
     const token = localStorage.getItem("token");
-    const response = await axios.get("http://localhost:4500/api/brand", {
+    const response = await axios.get(`${apiUrl}api/brand`, {
       headers: {
         Authorization: `Bearer ${token}`,
       },

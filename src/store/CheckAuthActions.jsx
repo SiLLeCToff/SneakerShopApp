@@ -6,13 +6,15 @@ import {
   noLoading,
 } from "./authSlice";
 
+const apiUrl = import.meta.env.VITE_REACT_APP_API_URL;
+
 export const checkAuth = async (dispatch) => {
   try {
     dispatch(setLoading());
     const storageToken = localStorage.getItem("token");
     if (storageToken) {
       const response = await axios.post(
-        "http://localhost:4500/api/user/auth",
+        `${apiUrl}api/user/auth`,
         { storageToken },
         {
           headers: {

@@ -5,6 +5,8 @@ import {selectCurrentPage, selectItemsPerPage} from "../../../store/paginationSl
 import {filterSneakers} from "../../../store/sneakersSlice.jsx";
 import {useNavigate} from "react-router-dom";
 
+const apiUrl = import.meta.env.VITE_REACT_APP_API_URL;
+
 const RightBlock = () => {
     const navigate = useNavigate()
     const brands = useSelector((state) => state.brand);
@@ -41,7 +43,7 @@ const RightBlock = () => {
                             onClick={() => handleOpenItem(item.id)}
                         >
                             <div className="flex 2xl:w-[300px] 2xl:h-[200px] w-200px h-150px">
-                            <img src={`http://localhost:4500/${item.img}`} alt="photo" />
+                            <img src={`${apiUrl}${item.img}`} alt="photo" />
                             </div>
                             <p className="font-medium">
                                 {brands.find(brand => brand.id === item.brandId) ? brands.find(brand => brand.id === item.brandId).name : ''} {item.name}

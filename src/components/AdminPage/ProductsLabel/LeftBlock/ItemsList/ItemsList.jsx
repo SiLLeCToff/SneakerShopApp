@@ -10,6 +10,8 @@ import {getAllBrands} from "../../../../../store/BrandActions.jsx";
 import {setBrands} from "../../../../../store/brandSlice.jsx";
 import {selectCurrentPage, selectItemsPerPage, setCurrentPage} from "../../../../../store/paginationSlice.jsx";
 
+
+const apiUrl = import.meta.env.VITE_REACT_APP_API_URL;
 export const ItemsList = () => {
   const dispatch = useDispatch();
 
@@ -49,7 +51,7 @@ export const ItemsList = () => {
     try {
       dispatch(setLoading())
       const token = localStorage.getItem("token");
-      const response = await axios.get("http://localhost:4500/api/snacker", {
+      const response = await axios.get(`${apiUrl}api/snacker`, {
         headers: {
           Authorization: `Bearer ${token}`,
         },
@@ -98,7 +100,7 @@ export const ItemsList = () => {
           }`}
           onClick={() => handleItemClick(item)}
         >
-          <img src={`http://localhost:4500/${item.img}`} alt="photo" />
+          <img src={`${apiUrl}${item.img}`} alt="photo" />
           <p className="font-medium">
             {brands.find(brand => brand.id === item.brandId) ? brands.find(brand => brand.id === item.brandId).name : ''} {item.name}
           </p>

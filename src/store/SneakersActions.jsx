@@ -4,11 +4,13 @@ import {noLoading, setLoading} from "./authSlice.jsx";
 import {getAllBrands} from "./BrandActions.jsx";
 import {setBrands} from "./brandSlice.jsx";
 
+const apiUrl = import.meta.env.VITE_REACT_APP_API_URL;
+
 export const getAllSneakers = async (dispatch) => {
   try {
     dispatch(setLoading());
     const token = localStorage.getItem("token");
-    const response = await axios.get("http://localhost:4500/api/snacker", {
+    const response = await axios.get(`${apiUrl}api/snacker`, {
       headers: {
         Authorization: `Bearer ${token}`,
       },
@@ -32,7 +34,7 @@ export  const updateSneaker = (id, name, price, brandId) => async () => {
     formData.append("price", `${price}`);
     formData.append("brandId", `${brandId}`);
     const token = localStorage.getItem("token")
-    const response = await axios.patch("http://localhost:4500/api/snacker", formData,{
+    const response = await axios.patch(`${apiUrl}api/snacker`, formData,{
       headers: {
         Authorization: `Bearer ${token}`,
       },
@@ -48,7 +50,7 @@ export  const updateSneaker = (id, name, price, brandId) => async () => {
 export const deleteSneaker = (id) => async () => {
   try {
     const token = localStorage.getItem("token")
-    const response = await axios.delete(`http://localhost:4500/api/snacker/${id}`,
+    const response = await axios.delete(`${apiUrl}api/snacker/${id}`,
         {
           headers: {
             Authorization: `Bearer ${token}`,

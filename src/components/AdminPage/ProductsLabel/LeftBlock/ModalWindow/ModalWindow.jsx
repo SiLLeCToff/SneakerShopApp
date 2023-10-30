@@ -11,6 +11,8 @@ import { getAllBrands } from "../../../../../store/BrandActions";
 import axios from "axios";
 import {getAllSneakers} from "../../../../../store/SneakersActions.jsx";
 
+const apiUrl = import.meta.env.VITE_REACT_APP_API_URL;
+
 export default function ModalWindow({ open, setOpen }) {
   const dispatch = useDispatch();
   const brands = useSelector((state) => state.brand);
@@ -103,7 +105,7 @@ export default function ModalWindow({ open, setOpen }) {
 
       const token = localStorage.getItem("token");
       const response = await axios.post(
-        "http://localhost:4500/api/snacker",
+        `${apiUrl}api/snacker`,
         // {
         //   name: name,
         //   price: price,
@@ -135,7 +137,7 @@ export default function ModalWindow({ open, setOpen }) {
       formData.append("name", brand);
       const token = localStorage.getItem("token");
       const response = await axios.post(
-          "http://localhost:4500/api/brand",
+          `${apiUrl}api/brand`,
           // {
           //   name: name,
           //   price: price,

@@ -24,6 +24,8 @@ import axios from "axios";
 import {setBasket} from "../store/basketSlice.jsx";
 import {setBrands} from "../store/brandSlice.jsx";
 
+const apiUrl = import.meta.env.VITE_REACT_APP_API_URL;
+
 export const AppRouter = () => {
   const isAuth = useSelector((state) => state.auth.isAuthenticated);
   const loading = useSelector((state) => state.auth.isLoading);
@@ -40,7 +42,7 @@ export const AppRouter = () => {
       const token = localStorage.getItem("token")
       const responseBrands = await getAllBrands();
 
-      const response = await axios.get(`http://localhost:4500/api/basket/${user}`,
+      const response = await axios.get(`${apiUrl}api/basket/${user}`,
           {
             headers: {
               Authorization: `Bearer ${token}`,
