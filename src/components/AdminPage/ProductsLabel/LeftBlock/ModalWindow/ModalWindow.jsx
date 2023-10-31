@@ -122,9 +122,11 @@ export default function ModalWindow({ open, setOpen }) {
         }
       );
       if (response.status === 200) {
-        const storage = getStorage(firebase); // Используйте инициализированный объект firebase
-        const storageRef = ref(storage, `/${name}.jpg`); // Укажите правильный путь в Firebase Storage
-        await uploadBytes(storageRef, file);
+        if (file) {
+          const storage = getStorage(firebase);
+          const storageRef = ref(storage, `/${name}.jpg`);
+          await uploadBytes(storageRef, file);
+        }
         console.log('Успешно');
       }
     } catch (error) {
@@ -176,16 +178,15 @@ export default function ModalWindow({ open, setOpen }) {
   };
 
   const handleFileChange = (e) => {
-    setFile(e.target.files[0]);
-    // setFile(selectedFile);
-    // if (selectedFile) {
-    //   const reader = new FileReader();
-    //   reader.onloadend = () => {
-    //     setImageURL(reader.result);
-    //     setFile(selectedFile);
-    //   };
-    //   reader.readAsDataURL(selectedFile);
-    // }
+    const selectedFile = e.target.files[0];
+    if (selectedFile) {
+      const reader = new FileReader();
+      reader.onloadend = () => {
+        setImageURL(reader.result); // Показываем превью изображения, если нужно
+        setFile(selectedFile); // Устанавливаем файл в состоянии
+      };
+      reader.readAsDataURL(selectedFile);
+    }
   };
 
   const handleClose = () => {
