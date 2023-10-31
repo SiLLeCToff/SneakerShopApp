@@ -57,10 +57,10 @@ export default function SliderPrice() {
 
 
 
-    const [minPrice, setMinPrice] = useState(0);
-    const [maxPrice, setMaxPrice] = useState(55000);
 
     const filters = useSelector((state) => state.sneakers.filters);
+    const [minPrice, setMinPrice] = useState(0);
+    const [maxPrice, setMaxPrice] = useState(150000);
 
     const handleSliderChange = (event, newValue) => {
         const updatedFilters = {
@@ -72,12 +72,9 @@ export default function SliderPrice() {
             setMaxPrice(newValue[1]);
         dispatch(filterSneakers(updatedFilters));
     };
-
     useEffect(() => {
         dispatch(filterSneakers(filters));
-        if (filters.length > 0) {
-            const maxPrice = Math.max(...filters.map(sneaker => sneaker.price));
-            setMaxPrice(maxPrice)}
+
     }, [filters, dispatch]);
 
     return (
@@ -85,10 +82,10 @@ export default function SliderPrice() {
             <AirbnbSlider
                 slots={{ thumb: AirbnbThumbComponent }}
                 getAriaLabel={(index) => (index === 0 ? 'Minimum price' : 'Maximum price')}
-                defaultValue={[0, maxPrice]}
+                defaultValue={[0 , 150000]}
                 min={0} // Устанавливаем минимальное значение
-                max={maxPrice}
-                step={50}
+                max={150000}
+                step={500}
                 onChange={handleSliderChange}
             />
     <div className="flex justify-between">
