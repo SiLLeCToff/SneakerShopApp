@@ -125,7 +125,8 @@ export default function ModalWindow({ open, setOpen }) {
         if (file) {
           const storage = getStorage(firebase);
           const storageRef = ref(storage, `/${name}.jpg`);
-          await uploadBytes(storageRef, file);
+        const res = await uploadBytes(storageRef, file);
+          console.log(res)
         }
         console.log('Успешно');
       }
