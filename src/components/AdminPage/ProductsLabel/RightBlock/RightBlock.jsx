@@ -49,7 +49,7 @@ const handleClick = async (e) => {
     } catch (error) {
         console.error("Не удалось обновить данные:", error)
     } finally {
-        getAllSneakers(dispatch)
+        dispatch(getAllSneakers(dispatch))
         dispatch(noLoading())
     }
 }
