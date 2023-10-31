@@ -16,3 +16,29 @@
 .news img {
   @apply w-4 h-4 cursor-pointer;
 }
+
+@keyframes slideInRight {
+  from {
+    transform: translateX(100%);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideInLeft {
+  from {
+    transform: translateX(-100%);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+
+.slideInRight {
+  animation: slideInRight 1s ease-out;
+}
+
+.slideInLeft {
+  animation: slideInLeft 1s ease-out;
+}

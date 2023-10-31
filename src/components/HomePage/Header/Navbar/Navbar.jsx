@@ -40,37 +40,37 @@ export const Navbar = ({open}) => {
         >
           <div className="flex flex-col items-start gap-1">
             <Link to="/catalog?brand=1" className="group xl:mx-2 md:mx-1">
-              <p className="font-normal">NIKE</p>
+              <span className="font-normal">NIKE</span>
             </Link>
             <Link to="/catalog?brand=1" className="group xl:mx-2 md:mx-1">
-              <p className=" font-light">Jordan's</p>
+              <span className=" font-light">Jordan's</span>
             </Link>
             <Link to="/catalog?brand=1" className="group xl:mx-2 md:mx-1">
-              <p className=" font-light">Air Max</p>
+              <span className=" font-light">Air Max</span>
             </Link>
           </div>
 
           <div className="flex flex-col items-start gap-1">
             <Link to="/catalog?brand=2" className="group xl:mx-2 md:mx-1">
-              <p className="font-normal">Adidas</p>
+              <span className="font-normal">Adidas</span>
             </Link>
             <Link to="/catalog?brand=2" className="group xl:mx-2 md:mx-1">
-              <p className=" font-light">Yeezy</p>
+              <span className=" font-light">Yeezy</span>
             </Link>
             <Link to="/catalog?brand=2" className="group xl:mx-2 md:mx-1">
-              <p className=" font-light">Air Max</p>
+              <span className=" font-light">Air Max</span>
             </Link>
           </div>
 
           <div className="flex flex-col justify-center items-start gap-1">
             <Link to="/catalog?brand=1" className="flex xl:mx-2 md:mx-1">
-              <p className="font-normal">New Balance</p>
+              <span className="font-normal">New Balance</span>
             </Link>
             <Link to="/catalog?brand=1" className="flex xl:mx-2 md:mx-1">
-              <p className=" font-light">Jordan's</p>
+              <span className=" font-light">Jordan's</span>
             </Link>
             <Link to="/catalog?brand=1" className="flex xl:mx-2 md:mx-1">
-              <p className=" font-light">Air Max</p>
+              <span className=" font-light">Air Max</span>
             </Link>
           </div>
 

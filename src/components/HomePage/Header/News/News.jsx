@@ -1,10 +1,8 @@
-import React, {useState} from "react";
+import React, { useState, useEffect } from "react";
 import styles from "./News.module.css";
 import leftArrow from "../../../../icons/leftArrow.svg";
 import rightArrow from "../../../../icons/rightArrow.svg";
-import logo from "../../../../images/logo.jpg";
-import search from "../../../../icons/search.svg";
-import cart from "../../../../icons/cart.svg";
+
 export const News = () => {
     const newsItems = [
         "-20% на новую коллекцию Jordan",
@@ -21,15 +19,26 @@ export const News = () => {
     const handleNextSlide = () => {
         setCurrentIndex((prevIndex) => (prevIndex + 1) % newsItems.length);
     };
-  return (
-    <div className={styles.news}>
-      <a onClick={handlePrevSlide}>
-        <img src={leftArrow} alt="Left Arrow" />
-      </a>
-        <span className="flex w-[280px] text-center justify-center items-center">{newsItems[currentIndex]}</span>
-      <a onClick={handleNextSlide}>
-        <img src={rightArrow} alt="Right Arrow" />
-      </a>
-    </div>
-  );
+
+    useEffect(() => {
+        const intervalId = setInterval(() => {
+            setCurrentIndex((prevIndex) => (prevIndex + 1) % newsItems.length);
+        }, 8000); // каждые 5 секунд
+
+        return () => clearInterval(intervalId); // Очистка интервала при размонтировании компонента
+    }, []); // Пустой массив зависимостей, чтобы запустить эффект только один раз после монтирования
+
+    return (
+        <div className={styles.news}>
+            <a onClick={handlePrevSlide}>
+                <img src={leftArrow} alt="Left Arrow" />
+            </a>
+            <span className={`flex w-[280px] text-center justify-center items-center transition-all duration-500`}>
+                {newsItems[currentIndex]}
+            </span>
+            <a onClick={handleNextSlide}>
+                <img src={rightArrow} alt="Right Arrow" />
+            </a>
+        </div>
+    );
 };

@@ -16,7 +16,6 @@ const SizeFilter = () => {
         { size: 45 },
     ];
     const [activeFilters, setActiveFilters] = useState([]);
-console.log(activeFilters)
     const handleFilterClick = (filter) => {
         if (activeFilters.includes(filter)) {
             setActiveFilters(activeFilters.filter((item) => item !== filter));

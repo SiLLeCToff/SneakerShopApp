@@ -11,7 +11,6 @@ export default function BrandsCheckBoxes() {
     const brandIds = brands.map(brand => brand.id);
 
     const filters = useSelector((state) => state.sneakers.filters);
-    const brandI = useSelector((state)=> state.sneakers.filters.brandId)
 
     const [brandId, setBrandId] = useState(filters.brandId);
 
@@ -39,17 +38,16 @@ export default function BrandsCheckBoxes() {
 
 
     useEffect(() => {
-        const fetchData = async () => {
+        const fetchData = () => {
             if (brandLocation !== 0 && brandId[0] !== brandLocation) {
                 const updatedFilters = {
                     ...filters,
                     brandId: [brandLocation],
                 };
-                await dispatch(filterSneakers(updatedFilters));
+                dispatch(filterSneakers(updatedFilters));
 
 
-            } else {
-              await  dispatch(clearFilters())
+            } else {dispatch(clearFilters())
             }
         };
 
