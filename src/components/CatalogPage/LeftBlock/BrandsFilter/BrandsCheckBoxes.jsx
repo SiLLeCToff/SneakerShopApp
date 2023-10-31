@@ -8,7 +8,7 @@ export default function BrandsCheckBoxes() {
     const location = useLocation();
     const brandLocation =Number(new URLSearchParams(location.search).get("brand"));
     const brands = useSelector((state)=> state.brand)
-    const brandIds = brands.map(brand => brand.id);
+
 
     const filters = useSelector((state) => state.sneakers.filters);
 
@@ -52,7 +52,7 @@ export default function BrandsCheckBoxes() {
         };
 
         fetchData();
-    }, [brandLocation, brandIds, brandId, filters, dispatch]);
+    }, [brands, brandId]);
 
     return (
         <fieldset>
