@@ -84,7 +84,7 @@ export default function SliderPrice() {
                 getAriaLabel={(index) => (index === 0 ? 'Minimum price' : 'Maximum price')}
                 defaultValue={[0, 55000]}
                 min={0} // Устанавливаем минимальное значение
-                max={55000}
+                max={550000}
                 step={50}
                 onChange={handleSliderChange}
             />
