@@ -75,6 +75,9 @@ export default function SliderPrice() {
 
     useEffect(() => {
         dispatch(filterSneakers(filters));
+        if (filters.length > 0) {
+            const maxPrice = Math.max(...filters.map(sneaker => sneaker.price));
+            setMaxPrice(maxPrice)}
     }, [filters, dispatch]);
 
     return (
@@ -82,9 +85,9 @@ export default function SliderPrice() {
             <AirbnbSlider
                 slots={{ thumb: AirbnbThumbComponent }}
                 getAriaLabel={(index) => (index === 0 ? 'Minimum price' : 'Maximum price')}
-                defaultValue={[0, 55000]}
+                defaultValue={[0, maxPrice]}
                 min={0} // Устанавливаем минимальное значение
-                max={550000}
+                max={maxPrice}
                 step={50}
                 onChange={handleSliderChange}
             />
