@@ -8,7 +8,6 @@ export const loginUser = (email, password) => async (dispatch) => {
       email,
       password,
     });
-    console.log(response);
     if (response.status === 200) {
       const accessToken = response.data.token;
       console.log(response);
