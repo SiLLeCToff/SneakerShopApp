@@ -12,6 +12,7 @@ import {selectCurrentPage, selectItemsPerPage, setCurrentPage} from "../../../..
 
 
 const apiUrl = import.meta.env.VITE_REACT_APP_API_URL;
+const imgUrl = import.meta.env.VITE_REACT_APP_IMG_URL;
 export const ItemsList = () => {
   const dispatch = useDispatch();
 
@@ -100,7 +101,7 @@ export const ItemsList = () => {
           }`}
           onClick={() => handleItemClick(item)}
         >
-          <img src={`${apiUrl}${item.img}`} alt="photo" />
+          <img src={`${imgUrl}${encodeURIComponent(item.name)}?alt=media`} alt="photo" />
           <p className="font-medium">
             {brands.find(brand => brand.id === item.brandId) ? brands.find(brand => brand.id === item.brandId).name : ''} {item.name}
           </p>

@@ -1,5 +1,4 @@
 import { initializeApp } from "firebase/app";
-import { getAnalytics } from "firebase/analytics";
 import { getStorage } from "firebase/storage";
 
 const apiKey = import.meta.env.VITE_REACT_APP_FB_API_KEY;
@@ -21,8 +20,4 @@ const firebaseConfig = {
 };
 
 const app = initializeApp(firebaseConfig);
-const analytics = getAnalytics(app);
-const storage = getStorage(app);
-
-
-export default { storage, app, analytics };
+export const imageDB = getStorage(app)

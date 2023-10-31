@@ -21,6 +21,9 @@ const BasketPage = () => {
     const userId = useSelector((state)=> state.auth.user)
     const totalAmount = basket.reduce((acc, item) => acc + item.price, 0);
     const navigate = useNavigate()
+
+
+    const imgUrl = import.meta.env.VITE_REACT_APP_IMG_URL;
     const handleRedidectToBuy = () => {
         navigate("/catalog")
     }
@@ -96,7 +99,7 @@ const BasketPage = () => {
 
                     { basket && basket.map((item) => <div key={item.id} className="flex w-full">
                         <div className="flex w-1/3 items-center justify-start gap-7 font-light">
-                                <img src={`${apiUrl}${item.img}`} alt="photo" className="flex 2xl:w-[150px] 2xl:h-[150px] sm:w-[110px] sm:h-[110px] max-sm:w-[100px] max-sm:h-[100px] bg-gray-50 rounded-3xl bg-cover object-contain"/>
+                                <img src={`${imgUrl}${encodeURIComponent(item.name)}?alt=media`} alt="photo" className="flex 2xl:w-[150px] 2xl:h-[150px] sm:w-[110px] sm:h-[110px] max-sm:w-[100px] max-sm:h-[100px] bg-gray-50 rounded-3xl bg-cover object-contain"/>
                         <div className="flex flex-col justify-start items-start">
                             <p className="flex font-normal 2xl:text-[30px] xl:text-[20px] 2xl:mb-[5px] whitespace-nowrap">{item.name}</p>
                             <p className="flex 2xl:mb-[8px] whitespace-nowrap">{(brands.find(brand => brand.id === item.brandId) ? brands.find(brand => brand.id === item.brandId).name : '').toUpperCase()}</p>

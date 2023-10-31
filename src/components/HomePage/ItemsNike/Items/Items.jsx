@@ -8,6 +8,7 @@ import {getAllBrands} from "../../../../store/BrandActions.jsx";
 import {useNavigate} from "react-router-dom";
 
 const apiUrl = import.meta.env.VITE_REACT_APP_API_URL;
+const imgUrl = import.meta.env.VITE_REACT_APP_IMG_URL;
 
 export const Items = () => {
   const items = useSelector((state) => state.sneakers.filteredSneakers);
@@ -46,7 +47,7 @@ const handleRedirect = (id) => {
           {filteredDataItems.slice(0, 4).map((item, index) => (
               <div key={item.id} className={styles.items} onClick={() =>handleRedirect(item.id)}>
                 <div className={styles.photo}>
-                  <img src={`${apiUrl}${item.img}`} alt="photo"/>
+                  <img src={`${imgUrl}${encodeURIComponent(item.name)}?alt=media`} alt="photo"/>
                 </div>
                 <div className={styles.itemsText}>
                   <span

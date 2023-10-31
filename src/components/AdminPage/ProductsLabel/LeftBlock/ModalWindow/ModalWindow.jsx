@@ -11,7 +11,7 @@ import { getAllBrands } from "../../../../../store/BrandActions";
 import axios from "axios";
 import {getAllSneakers} from "../../../../../store/SneakersActions.jsx";
 import { getStorage, ref, uploadBytes } from "firebase/storage";
-import firebase from "../../../../../Firebase/firebase.jsx"
+import {imageDB} from "../../../../../Firebase/firebase.jsx";
 
 const apiUrl = import.meta.env.VITE_REACT_APP_API_URL;
 
@@ -87,7 +87,7 @@ export default function ModalWindow({ open, setOpen }) {
   const sizesJSON = JSON.stringify(sizes);
 
   const [imageURL, setImageURL] = useState(null);
-  const [file, setFile] = useState(null);
+  const [file, setFile] = useState('');
   const [idBrand, setIdBrand] = useState(1);
 
   const handleBrandSelect = (selectedBrand) => {
@@ -122,12 +122,8 @@ export default function ModalWindow({ open, setOpen }) {
         }
       );
       if (response.status === 200) {
-        if (file) {
-          const storage = getStorage(firebase);
-          const storageRef = ref(storage, `/${name}.jpg`);
-        const res = await uploadBytes(storageRef, file);
-          console.log(res)
-        }
+        const imgRef = ref(imageDB, `files/${name}`)
+        uploadBytes(imgRef, file)
         console.log('Успешно');
       }
     } catch (error) {

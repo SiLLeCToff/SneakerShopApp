@@ -6,6 +6,7 @@ import {filterSneakers} from "../../../store/sneakersSlice.jsx";
 import {useNavigate} from "react-router-dom";
 
 const apiUrl = import.meta.env.VITE_REACT_APP_API_URL;
+const imgUrl = import.meta.env.VITE_REACT_APP_IMG_URL;
 
 const RightBlock = () => {
     const navigate = useNavigate()
@@ -43,7 +44,7 @@ const RightBlock = () => {
                             onClick={() => handleOpenItem(item.id)}
                         >
                             <div className="flex 2xl:w-[300px] 2xl:h-[200px] w-200px h-150px">
-                            <img src={`${apiUrl}${item.img}`} alt="photo" />
+                            <img src={`${imgUrl}${encodeURIComponent(item.name)}?alt=media`} alt="photo" />
                             </div>
                             <p className="font-medium">
                                 {brands.find(brand => brand.id === item.brandId) ? brands.find(brand => brand.id === item.brandId).name : ''} {item.name}
