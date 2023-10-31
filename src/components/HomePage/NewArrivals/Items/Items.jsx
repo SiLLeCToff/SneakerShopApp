@@ -48,7 +48,7 @@ const handleRedirect = (id) => {
           {filteredDataItems.slice(0, 4).map((item, index) => (
               <div key={item.id} className={styles.items} onClick={() =>handleRedirect(item.id)}>
                 <div className={styles.photo}>
-                  <img src={`${imgUrl}${encodeURIComponent(item.name)}?alt=media`} alt="photo"/>
+                  <img src={`${imgUrl}${encodeURIComponent(item.id)}?alt=media`} alt="photo"/>
                 </div>
                 <div className={styles.itemsText}>
                   <span

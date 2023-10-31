@@ -122,7 +122,8 @@ export default function ModalWindow({ open, setOpen }) {
         }
       );
       if (response.status === 200) {
-        const imgRef = ref(imageDB, `files/${name}`)
+        const id = response.data.id
+        const imgRef = ref(imageDB, `files/${id}`)
         uploadBytes(imgRef, file)
         console.log('Успешно');
       }

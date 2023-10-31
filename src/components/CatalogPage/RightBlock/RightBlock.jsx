@@ -44,7 +44,7 @@ const RightBlock = () => {
                             onClick={() => handleOpenItem(item.id)}
                         >
                             <div className="flex 2xl:w-[300px] 2xl:h-[200px] w-200px h-150px">
-                            <img src={`${imgUrl}${encodeURIComponent(item.name)}?alt=media`} alt="photo" />
+                            <img src={`${imgUrl}${encodeURIComponent(item.id)}?alt=media`} alt="photo" />
                             </div>
                             <p className="font-medium">
                                 {brands.find(brand => brand.id === item.brandId) ? brands.find(brand => brand.id === item.brandId).name : ''} {item.name}

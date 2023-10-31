@@ -126,7 +126,7 @@ const SneakerPage = () => {
                 <div className="w-full h-[95%] flex max-sm:flex-col max-sm:justify-center gap-4 items-start max-sm:items-center">
                     <div className="flex w-[50%] h-full max-sm:w-full items-center justify-center pt-20 ">
                         <div className="slider-container flex h-full items-center justify-center flex-col">
-                            <img src={`${imgUrl}${encodeURIComponent(itemInfo.name)}?alt=media`} className='flex rounded-3xl w-[550px] max-sm:w-auto max-sm:h-auto bg-cover object-contain' alt="test" />
+                            <img src={`${imgUrl}${encodeURIComponent(itemInfo.id)}?alt=media`} className='flex rounded-3xl w-[550px] max-sm:w-auto max-sm:h-auto bg-cover object-contain' alt="test" />
                             {/*<button onClick={handlePrev}>Previous</button>*/}
                             {/*<button onClick={handleNext}>Next</button>*/}
                         </div>

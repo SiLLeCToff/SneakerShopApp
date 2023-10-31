@@ -8,7 +8,6 @@ export const Description = ({id, setName}) => {
 
   const [brandId, setBrandId] = useState(activeItem ? activeItem.brandId : "");
   const [inputName, setInputName] = useState(activeItem ? activeItem.name : "");
-
   useEffect(() => {
 
     if (activeItem && activeItem.name !== inputName) {

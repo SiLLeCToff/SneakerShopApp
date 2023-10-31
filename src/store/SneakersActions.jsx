@@ -8,7 +8,10 @@ const apiUrl = import.meta.env.VITE_REACT_APP_API_URL;
 
 export const getAllSneakers = async (dispatch) => {
   try {
-    dispatch(setLoading());
+    if(dispatch)
+    {
+      dispatch(setLoading());
+    }
     const token = localStorage.getItem("token");
     const response = await axios.get(`${apiUrl}api/snacker`, {
       headers: {
@@ -22,7 +25,9 @@ export const getAllSneakers = async (dispatch) => {
   } catch (error) {
     console.error("Ошибка при получении товаров:", error);
   } finally {
-    dispatch(noLoading())
+    if(dispatch) {
+      dispatch(noLoading())
+    }
   }
 };
 
@@ -40,7 +45,7 @@ export  const updateSneaker = (id, name, price, brandId) => async () => {
       },
 
     });
-
+  return response
   } catch (error) {
     console.error("Ошибка при обновлении данных товара:", error)
   }

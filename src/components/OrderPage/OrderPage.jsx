@@ -20,7 +20,7 @@ const OrderPage = () => {
                 <div className="flex bg-[#FAFAFA] w-1/2 items-center justify-start gap-4 flex-col pt-[30px]">
                     {itemsFromBasket.map((item, index) => <div className="flex w-[80%] justify-start items-center gap-4" key={item.id}>
                         <div className="flex justify-center items-center">
-                        <img src={`https://firebasestorage.googleapis.com/v0/b/sneakerstoragesillect.appspot.com/o/files%2F${encodeURIComponent(item.name)}?alt=media`} alt='photo' className="flex w-[150px] h-[120px] rounded-3xl object-contain border border-black border-opacity-5 "/>
+                        <img src={`${apiUrl}${encodeURIComponent(item.id)}?alt=media`} alt='photo' className="flex w-[150px] h-[120px] rounded-3xl object-contain border border-black border-opacity-5 "/>
                         </div>
                         <div className="flex justify-center flex-col gap-4 w-full">
                             <p className="flex whitespace-nowrap">{(brands.find(brand => brand.id === item.brandId) ? brands.find(brand => brand.id === item.brandId).name : '').toUpperCase()} {item.name}</p>

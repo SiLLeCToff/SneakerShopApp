@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useEffect} from "react";
 import { useSelector } from "react-redux";
 import { Description } from "./Description/Description";
 import styles from "./EditProduct.module.css";
@@ -10,12 +10,17 @@ export const EditProduct = ({id, price, name}) => {
   const radioMenu = useSelector((state) => state.props.radioMenuA);
   const activeItem = useSelector((state) => state.props.activeItemA);
   const itemName = activeItem ? activeItem.name : "";
+  const itemId = activeItem ? activeItem.id : "";
+
+  useEffect(() => {
+
+  }, [itemName]);
 
   return (
     <div className={styles.main}>
       {itemName && (
         <img
-        src={`${imgUrl}${encodeURIComponent(itemName.name)}?alt=media`}
+        src={`${imgUrl}${encodeURIComponent(itemId)}?alt=media`}
           alt="image"
           className="flex w-90% 2xl:h-200px h-150px rounded-2xl mb-4 justify-center items-center bg-cover object-cover"
         />

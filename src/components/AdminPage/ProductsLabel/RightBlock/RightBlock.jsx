@@ -5,6 +5,7 @@ import styles from "./RightBlock.module.css";
 import {useDispatch, useSelector} from "react-redux";
 import {deleteSneaker, getAllSneakers, updateSneaker} from "../../../../store/SneakersActions.jsx";
 import {noLoading, setLoading} from "../../../../store/authSlice.jsx";
+import axios from "axios";
 
 export const RightBlock = () => {
     const activeItem = useSelector((state) => state.props.activeItemA);
@@ -15,20 +16,18 @@ export const RightBlock = () => {
     const [name, setName] = useState(activeItem ? activeItem.name : null)
     const [brandId, setBrandId] = useState(null)   /// DONE
     const [price, setPrice] = useState(activeItem ? activeItem.price : 0)
-    // console.log(id,name,brandId,price)
-
 
     /////////////////////////////////////////////////////////////////////
 
 //     console.log(id) // id для обновления данных
 // console.log(brandId)
-    useEffect(() => {
+    useEffect( () => {
         if (activeItem) {
             setPrice(activeItem.price)
             setName(activeItem.name)
         }
-        getAllSneakers(dispatch)
-    }, [activeItem, dispatch]);
+
+    }, [activeItem, dispatch, getAllSneakers]);
 const handleDeleteSneaker = async () => {
     try {
         dispatch(setLoading())
@@ -41,18 +40,23 @@ const handleDeleteSneaker = async () => {
         dispatch(noLoading())
     }
 }
-const handleClick = async (e) => {
-    try {
-        dispatch(setLoading());
-     dispatch(await updateSneaker(id,name,price,brandId))
 
-    } catch (error) {
-        console.error("Не удалось обновить данные:", error)
-    } finally {
-        dispatch(getAllSneakers(dispatch))
-        dispatch(noLoading())
-    }
-}
+
+    const handleClick = async (e) => {
+        try {
+            console.log(id)
+            dispatch(setLoading());
+            const response = await dispatch(updateSneaker(id, name, price, brandId));
+            // Обработка успешного ответа
+            getAllSneakers(dispatch)
+            // console.log("Данные успешно обновлены:", response);
+        } catch (error) {
+            console.error("Не удалось обновить данные:", error);
+            // Обработка ошибки
+        } finally {
+            dispatch(noLoading());
+        }
+    };
 
 
 

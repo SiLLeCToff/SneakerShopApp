@@ -101,7 +101,7 @@ export const ItemsList = () => {
           }`}
           onClick={() => handleItemClick(item)}
         >
-          <img src={`${imgUrl}${encodeURIComponent(item.name)}?alt=media`} alt="photo" />
+          <img src={`${imgUrl}${encodeURIComponent(item.id)}?alt=media`} alt="photo" />
           <p className="font-medium">
             {brands.find(brand => brand.id === item.brandId) ? brands.find(brand => brand.id === item.brandId).name : ''} {item.name}
           </p>

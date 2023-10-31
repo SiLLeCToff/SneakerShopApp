@@ -10,7 +10,7 @@ import { RightBlock } from "./ProductsLabel/RightBlock/RightBlock";
 import { LeftBlock } from "./ProductsLabel/LeftBlock/LeftBlock";
 import ProfileA from "./ProfileA/ProfileA";
 import { getAllBrands } from "../../store/BrandActions";
-import { useDispatch } from "react-redux";
+import {useDispatch, useSelector} from "react-redux";
 import { setBrands } from "../../store/brandSlice";
 import ProductsLabel from "./ProductsLabel/ProductsLabel.jsx";
 import DashboardLabel from "./DashboardLabel/DashboardLabel.jsx";
@@ -28,6 +28,7 @@ const tabs = [
 export const AdminPage = () => {
   const dispatch = useDispatch();
   const [activeTab, setActiveTab] = useState("Товары");
+  const sneakers = useSelector((state)=> state.originalSneakers)
 
 
 
@@ -43,7 +44,7 @@ export const AdminPage = () => {
   useEffect(() => {
     dispatch(getAllBrands)
     dispatch(getAllSneakers)
-  }, [dispatch]);
+  }, [dispatch,sneakers]);
   return (
     <>
       <div className={styles.main}>
