@@ -15,7 +15,7 @@ export const EditProduct = ({id, price, name}) => {
     <div className={styles.main}>
       {itemName && (
         <img
-        src={`${imgUrl}${encodeURIComponent(item.name)}?alt=media`}
+        src={`${imgUrl}${encodeURIComponent(itemName.name)}?alt=media`}
           alt="image"
           className="flex w-90% 2xl:h-200px h-150px rounded-2xl mb-4 justify-center items-center bg-cover object-cover"
         />
