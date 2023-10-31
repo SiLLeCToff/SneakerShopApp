@@ -1,6 +1,8 @@
 import { initializeApp } from "firebase/app";
 import { getAnalytics } from "firebase/analytics";
 import { getStorage } from "firebase/storage";
+import { initializeAppCheck, ReCaptchaEnterpriseProvider } from "firebase/app-check";
+
 
 const apiKey = import.meta.env.VITE_REACT_APP_FB_API_KEY;
 const Domain = import.meta.env.VITE_REACT_APP_FB_DOMAIN;
@@ -23,5 +25,11 @@ const firebaseConfig = {
 const app = initializeApp(firebaseConfig);
 const analytics = getAnalytics(app);
 const storage = getStorage(app);
+
+const appCheck = initializeAppCheck(app, {
+    provider: new ReCaptchaEnterpriseProvider(/* reCAPTCHA Enterprise site key */),
+    isTokenAutoRefreshEnabled: true // Set to true to allow auto-refresh.
+});
+
 
 export default { storage, app, analytics };

@@ -123,7 +123,7 @@ export default function ModalWindow({ open, setOpen }) {
       );
       if (response.status === 200) {
         const storage = getStorage(firebase); // Используйте инициализированный объект firebase
-        const storageRef = ref(storage, `path/to/${name}.jpg`); // Укажите правильный путь в Firebase Storage
+        const storageRef = ref(storage, `/${name}.jpg`); // Укажите правильный путь в Firebase Storage
         await uploadBytes(storageRef, file);
         console.log('Успешно');
       }
