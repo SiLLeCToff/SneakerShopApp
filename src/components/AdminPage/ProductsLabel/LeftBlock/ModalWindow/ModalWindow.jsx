@@ -223,7 +223,7 @@ export default function ModalWindow({ open, setOpen }) {
               leaveFrom="opacity-100 translate-y-0 sm:scale-100"
               leaveTo="opacity-0 translate-y-4 sm:translate-y-0 sm:scale-95"
             >
-              <Dialog.Panel className="relative transform overflow-hidden rounded-2xl bg-white bg-opacity-100 px-4 pb-4  text-left shadow-xl transition-all sm:my-8 sm:w-full  2xl:h-[550px] md:h-[500px] md:w-50%  sm:p-6">
+              <Dialog.Panel className="relative transform overflow-hidden rounded-2xl bg-white bg-opacity-100 px-4 pb-4  text-left shadow-xl transition-all sm:my-8 sm:w-full  2xl:h-[80%] md:h-[80%] md:w-50%  sm:p-6">
                 <div className="absolute right-0 top-0 hidden pr-4 pt-4 sm:block ">
                   <button
                     type="button"
@@ -251,7 +251,7 @@ export default function ModalWindow({ open, setOpen }) {
                   </div>
 
                 </div>}
-                {addItemOpen && <div className="sm:flex sm:items-center sm:justify-center ">
+                {addItemOpen && <div className="sm:flex sm:items-center sm:justify-center">
                   <div className="mt-3 flex flex-col  text-center sm:ml-4 sm:mt-0 sm:text-center">
                     <Dialog.Title
                         as="h3"
@@ -264,7 +264,7 @@ export default function ModalWindow({ open, setOpen }) {
                         <img
                             src={imageURL}
                             alt="Uploaded"
-                            className="mt-2 mx-auto rounded-lg"
+                            className="mt-2 mx-auto rounded-lg w-[200px] h-[150px] object-contain"
                         />
                     ) : (
                         <div className="mt-2">
