@@ -3,8 +3,10 @@ import React from "react";
 import { Items } from "./Items/Items";
 import styles from "./ItemsNike.module.css";
 import {Pagination} from "../../CatalogPage/RightBlock/Pagination/Pagination.jsx";
+import {useNavigate} from "react-router-dom";
 
 export const ItemsNike = () => {
+    const navigate = useNavigate()
   return (
     <div className={styles.main}>
       <h2 className="text-4xl max-w-md font-bold whitespace-nowrap">
@@ -14,6 +16,7 @@ export const ItemsNike = () => {
       {/* <div className={styles.pages}>1-9</div> */}
       <div className={styles.button}>
         <Button
+            onClick={()=> navigate('/catalog?brand=1')}
           variant="contained"
           sx={{
             height: "auto",
