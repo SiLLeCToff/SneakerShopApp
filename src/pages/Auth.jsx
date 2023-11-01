@@ -1,11 +1,12 @@
 import React from "react";
 import { SHOP_ROUTE } from "../utils/consts";
-import { useLocation } from "react-router-dom";
+import {useLocation, useNavigate} from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
 import {loginUser, registrationUser} from "../store/AuthActions";
 import { useState } from "react";
 
 export default function Auth() {
+  const navigate = useNavigate();
   const dispatch = useDispatch();
   const location = useLocation();
   const isAuth = useSelector((state) => state.auth.isAuthenticated);
@@ -115,20 +116,27 @@ export default function Auth() {
 
                   <div className="text-sm leading-6">
                     <a
-                      href="#"
+                      href="/registration"
                       className="font-semibold text-indigo-600 hover:text-indigo-500"
                     >
-                      Забыли Пароль?
+                      Зарегистрироваться
                     </a>
                   </div>
                 </div>
 
-                <div>
+                <div className="flex items-center flex-col">
                   <button
                     onClick={(e) => checkValidDataHandler(e)}
                     className="flex w-full justify-center rounded-md bg-indigo-600 px-3 py-1.5 text-sm font-semibold leading-6 text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
                   >
                     Войти
+                  </button>
+
+                  <button
+                      onClick={() => navigate("/")}
+                      className="flex w-[50%] mt-3 justify-center rounded-md bg-indigo-600 px-3 py-1.5 text-sm font-semibold leading-6 text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
+                  >
+                    На Главную
                   </button>
                 </div>
               </form>
@@ -176,12 +184,18 @@ export default function Auth() {
                   </div>
                 </div>
 
-                <div>
+                <div className="flex flex-col items-center">
                   <button
                       onClick={(e) => handleRegistration(e)}
                     className="flex w-full justify-center rounded-md bg-indigo-600 px-3 py-1.5 text-sm font-semibold leading-6 text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
                   >
                     Зарегистрироваться
+                  </button>
+                  <button
+                      onClick={() => navigate("/")}
+                      className="flex w-[50%] mt-3 justify-center rounded-md bg-indigo-600 px-3 py-1.5 text-sm font-semibold leading-6 text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
+                  >
+                    На Главную
                   </button>
                 </div>
               </form>
