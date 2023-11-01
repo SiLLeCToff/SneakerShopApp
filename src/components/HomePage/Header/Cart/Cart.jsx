@@ -1,6 +1,6 @@
  import React, {useEffect, useState} from "react";
 import styles from "./Cart.module.css";
-import logo from "../../../../images/logo.jpg";
+import logo from "../../../../images/logo.png";
 import search from "../../../../icons/search.svg";
 import cart from "../../../../icons/cart.svg";
 import { Badge, Button, IconButton } from "@mui/material";
@@ -47,7 +47,7 @@ export const Cart = ({open, handleClick}) => {
         <img src={search} alt="search" className="flex hover:bg-gray-100 hover:bg-opacity-80 rounded-md w-11 h-11 p-3 cursor-pointer" />
       </div>
         <div className="flex w-1/3 items-center justify-center">
-            <img onClick={handleLogoClick} src={logo} alt="Left Arrow" className=" rounded-full cursor-pointer" />
+            <img onClick={handleLogoClick} src={logo} alt="Left Arrow" className="w-[58px] h-[52px] object-cover  cursor-pointer" />
         </div>
       {/* <div className={styles.cart}>
         <img src={cart} alt="search" />

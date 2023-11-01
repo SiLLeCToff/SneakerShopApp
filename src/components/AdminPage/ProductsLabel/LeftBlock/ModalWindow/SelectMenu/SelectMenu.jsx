@@ -27,7 +27,7 @@ export default function SelectMenu({ onBrandSelect }) {
           <div
             className="relative mt-2"
             onClick={(e) => {
-              e.stopPropagation(); // Предотвращаем распространение события клика вверх по дереву DOM
+              e.stopPropagation();
             }}
           >
             <Listbox.Button className="relative w-full cursor-default rounded-md bg-white py-1.5 pl-3 pr-10 text-left text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 focus:outline-none focus:ring-2 focus:ring-indigo-600 sm:text-sm sm:leading-6">

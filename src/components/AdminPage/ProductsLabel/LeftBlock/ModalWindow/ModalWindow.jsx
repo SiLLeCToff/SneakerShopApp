@@ -1,10 +1,10 @@
 import {Fragment, useEffect, useState} from "react";
 import { Dialog, Transition } from "@headlessui/react";
 import {
-  ExclamationTriangleIcon,
   XMarkIcon,
 } from "@heroicons/react/24/outline";
-import { PhotoIcon, UserCircleIcon } from "@heroicons/react/24/solid";
+import logoBrand from "../../../../../images/new-balance-2.svg";
+import logoAddItem from "../../../../../images/addItem.png";
 import SelectMenu from "./SelectMenu/SelectMenu";
 import { useDispatch, useSelector } from "react-redux";
 import { getAllBrands } from "../../../../../store/BrandActions";
@@ -239,14 +239,14 @@ export default function ModalWindow({ open, setOpen }) {
                   <div
                       onClick={handleClickAddBrand}
                       className="flex w-[44%] items-center justify-start flex-col bg-white rounded-3xl cursor-pointer  transform hover:scale-105 transition-transform duration-500 ease-in-out">
-                    <img src="src/images/new-balance-2.svg" alt='logoBrand'
+                    <img src={logoBrand} alt='logoBrand'
                          className="flex w-full rounded-3xl h-[300px] bg-cover "/>
                     <p className="font-medium text-3xl">Бренд</p>
                   </div>
                   <div
                       onClick={handleClickAddItem}
                       className="flex w-[44%] items-center justify-start flex-col bg-white rounded-3xl cursor-pointer  transform hover:scale-105 transition-transform duration-500 ease-in-out">
-                    <img src="src/images/addItem.png" alt='logoBrand' className="flex w-full h-[300px]  rounded-3xl  bg-cover object-contain"/>
+                    <img src={logoAddItem} alt='logoItem' className="flex w-full h-[300px]  rounded-3xl  bg-cover object-contain"/>
                     <p className="font-medium text-3xl mt-[20px]">Товар</p>
                   </div>
 
