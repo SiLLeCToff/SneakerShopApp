@@ -1,6 +1,6 @@
 /* ----------------------------- ITEMS --------------------------------- */
 .products {
-  @apply flex w-11/12 md:h-4/6 sm:h-4/6 max-sm:h-3/6  items-center justify-center gap-4 md:overflow-x-hidden xl:overflow-visible overflow-y-hidden sm:overflow-x-auto max-sm:overflow-x-auto;
+  @apply flex w-11/12 md:h-4/6 sm:h-4/6 max-sm:h-3/6  items-center justify-between gap-4 md:overflow-x-hidden xl:overflow-visible overflow-y-hidden sm:overflow-x-auto max-sm:overflow-x-auto;
 }
 .items {
   height: 400px;
@@ -14,15 +14,16 @@
 }
 
 .photo {
-  @apply flex w-80 h-80 justify-center flex-shrink-0 rounded-3xl 2xl:w-[350px] 2xl:h-[350px] xl:w-[300px] xl:h-[200px] md:h-[200px] md:w-[100%] max-sm:w-[200px] max-sm:h-[200px];
+  @apply flex w-80 justify-center h-80 flex-shrink-0 rounded-3xl 2xl:w-[350px] 2xl:h-[350px] xl:w-[300px] xl:h-[200px] md:h-[200px] md:w-[100%] max-sm:w-[200px] max-sm:h-[200px];
 }
 .photo img {
+
   background-size: cover;
   border-radius: 24px;
   /*background-color: #efefe;*/
 }
 .photo img {
-  @apply  object-contain;
+  @apply object-contain;
 }
 .itemsText {
   @apply mb-2 mt-5 w-10/12 h-16 flex flex-col justify-center items-center;
@@ -47,10 +48,10 @@
   @apply flex font-bold;
 }
 
-/* ----------------------------- ITEMS --------------------------------- */
+/* ----------------------------- ITEMS END --------------------------------- */
 
 
-
+/* -------------------------SCROLL-BAR-------------------------------*/
 
 /* Firefox */
 * {
