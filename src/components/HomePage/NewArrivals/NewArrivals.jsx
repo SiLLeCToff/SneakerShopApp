@@ -10,7 +10,7 @@ export const NewArrivals = () => {
   return (
     <div className={styles.main}>
       <h2 className="text-4xl max-w-md font-bold whitespace-nowrap">
-        Новые поступления
+        Новые товары
       </h2>
       <Items />
       {/* <div className={styles.pages}>1-9</div> */}
