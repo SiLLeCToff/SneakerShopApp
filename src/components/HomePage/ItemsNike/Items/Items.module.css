@@ -14,7 +14,7 @@
 }
 
 .photo {
-  @apply flex w-80 justify-center h-80 flex-shrink-0 rounded-3xl 2xl:w-[350px] 2xl:h-[350px] xl:w-[300px] xl:h-[200px] md:h-[200px] md:w-[100%] max-sm:w-[200px] max-sm:h-[200px];
+  @apply flex w-80 justify-center h-80 flex-shrink-0 rounded-3xl 2xl:w-[350px] 2xl:h-[350px] xl:w-[300px] xl:h-[200px] md:h-[200px] md:w-[200px] max-sm:w-[200px] max-sm:h-[200px];
 }
 .photo img {
 
