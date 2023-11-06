@@ -1,6 +1,6 @@
 /* ----------------------------- ITEMS --------------------------------- */
 .products {
-  @apply flex w-11/12 md:h-4/6 sm:h-4/6 max-sm:h-3/6  items-center justify-between gap-4 md:overflow-x-auto  max-md:overflow-x-auto xl:overflow-hidden overflow-y-hidden sm:overflow-x-auto max-sm:overflow-x-auto;
+  @apply flex w-full md:h-4/6 sm:h-4/6 max-sm:h-3/6  items-center justify-between gap-4 md:overflow-x-auto  max-md:overflow-x-auto xl:overflow-hidden overflow-y-hidden sm:overflow-x-auto max-sm:overflow-x-auto;
 }
 .items {
   height: 420px;
