@@ -44,7 +44,7 @@ export const Cart = ({open, handleClick}) => {
           <div>
               <Hamburger open={open} handleClick={handleClick} />
           </div>
-        <img src={search} alt="search" className="flex hover:bg-gray-100 hover:bg-opacity-80 rounded-md w-11 h-11 p-3 cursor-pointer" />
+        <img src={search} alt="search" className=" max-xl:absolute max-xl:translate-x-[50px] hover:bg-gray-100 hover:bg-opacity-80 rounded-md w-11 h-11 p-3 cursor-pointer" />
       </div>
         <div className="flex w-1/3 items-center justify-center">
             <img onClick={handleLogoClick} src={logo} alt="Left Arrow" className="w-[58px] h-[52px] object-cover  cursor-pointer" />

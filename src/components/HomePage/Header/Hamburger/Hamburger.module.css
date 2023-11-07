@@ -1,6 +1,6 @@
 
 .hamburger {
-    @apply cursor-pointer xl:hidden flex relative z-30 hover:bg-gray-100 hover:bg-opacity-80 rounded-md;
+    @apply cursor-pointer xl:hidden absolute -translate-y-[25px] z-30 hover:bg-gray-100 hover:bg-opacity-80 rounded-md;
 }
 
 .hamburger input {

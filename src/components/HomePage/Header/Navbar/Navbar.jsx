@@ -9,7 +9,7 @@ export const Navbar = ({open}) => {
 
   return (
 <>
-    <div className="w-full h-full flex justify-center items-center   xl:flex md:hidden max-sm:hidden sm:hidden">
+    <div className="w-full h-full flex relative justify-center items-center   xl:flex md:hidden max-sm:hidden sm:hidden">
       <div className={`${styles.navbar}`}>
         <div className="h-full w-full flex justify-between items-center text-center py-1"
              onMouseLeave={() => setIsSubMenuVisible(false)}>
@@ -91,26 +91,26 @@ export const Navbar = ({open}) => {
       </div>
     </div>
 <div className="xl:hidden">
-  <div className={`fixed left-0 ${ open === true ? "translate-x-[0] duration-700" : "-translate-x-[400px] duration-700"} items-center mt-6 flex-col top-0 w-[300px] flex transition-all h-full z-20 bg-white pt-[100px] `}>
-    <a onClick={() => navigate('/catalog')} className="xl:px-2 xl:py-2 md:px-1 md:py-2">
+  <div className={`fixed left-0 ${ open === true ? "translate-x-[0] duration-700" : "-translate-x-[400px] duration-700"} items-center flex-col top-0 w-[300px] flex transition-all h-full z-20 bg-white pt-[100px] `}>
+    <a onClick={() => navigate('/catalog')} className="xl:px-2 xl:py-2 md:px-1 md:py-2 cursor-pointer">
       <span className="flex font-medium text-2xl" >КАТАЛОГ</span>
     </a>
-    <a onClick={() => navigate('/catalog?brand=1')} className="xl:px-2 xl:py-2 md:px-1 md:py-2">
+    <a onClick={() => navigate('/catalog?brand=1')} className="xl:px-2 xl:py-2 md:px-1 md:py-2 cursor-pointer">
       <span className="flex font-medium text-2xl" >NIKE</span>
     </a>
-    <a onClick={() => navigate('/catalog?brand=1')} className="xl:px-2 xl:py-2 md:px-1 md:py-2">
+    <a onClick={() => navigate('/catalog?brand=1')} className="xl:px-2 xl:py-2 md:px-1 md:py-2 cursor-pointer">
       <span className="flex font-medium text-2xl" >ADIDAS</span>
     </a>
-    <a onClick={() => navigate('/catalog?brand=1')} className="xl:px-2 xl:py-2 md:px-1 md:py-2">
+    <a onClick={() => navigate('/catalog?brand=1')} className="xl:px-2 xl:py-2 md:px-1 md:py-2 cursor-pointer">
       <span className="flex font-medium text-2xl" >NEW BALANCE</span>
     </a>
-    <a onClick={() => navigate('/catalog?brand=1')} className="xl:px-2 xl:py-2 md:px-1 md:py-2">
+    <a onClick={() => navigate('/catalog?brand=1')} className="xl:px-2 xl:py-2 md:px-1 md:py-2 cursor-pointer">
       <span className="flex font-medium text-2xl" >REEBOOK</span>
     </a>
-    <a onClick={() => navigate('/catalog?brand=1')} className="xl:px-2 xl:py-2 md:px-1 md:py-2">
+    <a onClick={() => navigate('/catalog?brand=1')} className="xl:px-2 xl:py-2 md:px-1 md:py-2 cursor-pointer">
       <span className="flex font-medium text-2xl" >PUMA</span>
     </a>
-    <a onClick={() => navigate('/catalog?brand=1')} className="xl:px-2 xl:py-2 md:px-1 md:py-2">
+    <a onClick={() => navigate('/catalog?brand=1')} className="xl:px-2 xl:py-2 md:px-1 md:py-2 cursor-pointer">
       <span className="flex font-medium text-2xl text-red-500" >АКЦИИ</span>
     </a>
   </div>

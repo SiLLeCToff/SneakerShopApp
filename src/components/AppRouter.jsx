@@ -67,10 +67,13 @@ export const AppRouter = () => {
         await checkAuth(dispatch);
         setIsAuthChecked(true);
       } catch (error) {
-        // Обработка ошибок, если не удалось проверить авторизацию
+        console.error("Не удалось проверить авторизацию", error)
       }
     };
     checkAuthentication();
+  }, []);
+
+  useEffect(() => {
   if (user !== null || undefined) {
     getBasketUserAndBrands(user)
   }
