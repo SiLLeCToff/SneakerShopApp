@@ -67,12 +67,14 @@ export const AppRouter = () => {
       try {
         await checkAuth(dispatch);
         setIsAuthChecked(true);
+        if(setIsAuthChecked === true) {
+          await getAllSneakers(dispatch)
+        }
       } catch (error) {
         console.error("Не удалось проверить авторизацию", error)
       }
     };
     checkAuthentication();
-    getAllSneakers(dispatch)
   }, []);
 
   useEffect(() => {
