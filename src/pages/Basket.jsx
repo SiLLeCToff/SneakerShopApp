@@ -1,4 +1,3 @@
-import React from "react";
 import BasketPage from "../components/BasketPage/BasketPage.jsx";
 
 const Basket = () => {

@@ -10,7 +10,6 @@ export const loginUser = (email, password) => async (dispatch) => {
     });
     if (response.status === 200) {
       const accessToken = response.data.token;
-      console.log(response);
       localStorage.setItem("token", accessToken);
       const user = response.data.user;
 

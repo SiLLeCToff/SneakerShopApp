@@ -1,5 +1,3 @@
-import React from "react";
-import { SHOP_ROUTE } from "../utils/consts";
 import {useLocation, useNavigate} from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
 import {loginUser, registrationUser} from "../store/AuthActions";
