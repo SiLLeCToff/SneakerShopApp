@@ -71,12 +71,12 @@ export const AppRouter = () => {
       }
     };
     checkAuthentication();
+    if (user !== null || undefined) {
+      getBasketUserAndBrands(user)
+    }
   }, []);
 
   useEffect(() => {
-  if (user !== null || undefined) {
-    getBasketUserAndBrands(user)
-  }
   }, [dispatch, user]);
 
   if (!isAuthChecked) {
