@@ -72,7 +72,7 @@ export const AppRouter = () => {
       }
     };
     checkAuthentication();
-    getAllSneakers()
+    getAllSneakers(dispatch)
   }, []);
 
   useEffect(() => {
