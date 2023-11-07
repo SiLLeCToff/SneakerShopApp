@@ -12,18 +12,7 @@ import {ItemsJordan} from "./ItemsJordan/ItemsJordan.jsx";
 
 
 export const HomePage = () => {
-    const dispatch= useDispatch()
-    // const getStateBrands = async () => {
-    //     try {
-    //         const response = await getAllBrands();
-    //         dispatch(setBrands(response));
-    //     } catch (error) {
-    //         console.error("Ошибка получения брендов:", error);
-    //     }
-    // };
-    useEffect(() => {
-        // getStateBrands(dispatch)
-    }, []);
+
   return (
     <div>
       <div className={styles.mains}>

@@ -32,12 +32,12 @@ const handleRedirect = (id) => {
     navigate(`/snacker/${id}`)
 }
 
-
-  useEffect(() => {
-     checkBrands()
-    getAllSneakers(dispatch)
-
-  }, [dispatch]);
+  //
+  // useEffect(() => {
+  //    checkBrands()
+  //   getAllSneakers(dispatch)
+  //
+  // }, [dispatch]);
 
   return (
       <>

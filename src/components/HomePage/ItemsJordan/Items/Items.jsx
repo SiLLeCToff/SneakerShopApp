@@ -29,12 +29,6 @@ const handleRedirect = (id) => {
 }
 
 
-  useEffect(() => {
-     checkBrands()
-    getAllSneakers(dispatch)
-
-  }, [dispatch]);
-
   return (
       <>
 
