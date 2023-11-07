@@ -8,7 +8,7 @@
 }
 
 .item {
-    @apply cursor-pointer flex w-250px 2xl:w-[300px] h-52 2xl:h-[300px] xl:h-60 xl:w-52 flex-col gap-1 justify-start items-center rounded-3xl box-border py-1 pb-3 hover:border-stone-500 border border-transparent active:border-stone-500 active:shadow-inner;
+    @apply cursor-pointer flex w-250px 2xl:w-full h-52 2xl:h-[300px] xl:h-60 xl:w-52 flex-col gap-1 justify-start items-center rounded-3xl box-border py-1 pb-3 hover:border-stone-500 border border-transparent active:border-stone-500 active:shadow-inner;
 }
 
 

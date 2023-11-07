@@ -43,7 +43,7 @@ const RightBlock = () => {
                             className={styles.item}
                             onClick={() => handleOpenItem(item.id)}
                         >
-                            <div className="flex 2xl:w-[300px] 2xl:h-[200px] w-200px h-150px">
+                            <div className="flex 2xl:w-[250px] 2xl:h-[200px] w-200px h-150px">
                             <img src={`${imgUrl}${encodeURIComponent(item.id)}?alt=media`} alt="photo" />
                             </div>
                             <p className="font-medium">
