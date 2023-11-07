@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import styles from "./AdminPage.module.css";
 import DashboardRoundedIcon from "@mui/icons-material/DashboardRounded";
 import CreditCardIcon from "@mui/icons-material/CreditCard";
@@ -6,15 +6,13 @@ import GroupRoundedIcon from "@mui/icons-material/GroupRounded";
 import BarChartRoundedIcon from "@mui/icons-material/BarChartRounded";
 import SettingsRoundedIcon from "@mui/icons-material/SettingsRounded";
 import SellRoundedIcon from "@mui/icons-material/SellRounded";
-import { RightBlock } from "./ProductsLabel/RightBlock/RightBlock";
-import { LeftBlock } from "./ProductsLabel/LeftBlock/LeftBlock";
 import ProfileA from "./ProfileA/ProfileA";
 import { getAllBrands } from "../../store/BrandActions";
 import {useDispatch, useSelector} from "react-redux";
-import { setBrands } from "../../store/brandSlice";
 import ProductsLabel from "./ProductsLabel/ProductsLabel.jsx";
 import DashboardLabel from "./DashboardLabel/DashboardLabel.jsx";
 import {getAllSneakers} from "../../store/SneakersActions.jsx";
+import logo from "../../images/logo.png";
 
 const tabs = [
   { label: "Dashboard", icon: <DashboardRoundedIcon />, component: DashboardLabel },
@@ -51,7 +49,7 @@ export const AdminPage = () => {
         <header className={styles.navbarBlock}>
           <nav className={styles.navbar}>
             <div className={styles.logo}>
-              <img src="test" alt="LOGO" />
+              <img src={logo} alt="LOGO" />
               <p className=" font-medium  text-xl hidden xl:flex">
                 SneackerShop ADMIN
               </p>
