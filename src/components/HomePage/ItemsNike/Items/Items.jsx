@@ -31,7 +31,11 @@ const handleRedirect = (id) => {
     navigate(`/snacker/${id}`)
 }
 
+    useEffect(() => {
+        //  checkBrands()
+        // getAllSneakers(dispatch)
 
+    }, [items]);
 
   return (
       <>

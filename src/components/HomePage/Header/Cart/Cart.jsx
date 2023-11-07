@@ -1,9 +1,9 @@
- import React, {useEffect, useState} from "react";
+ import {useEffect} from "react";
 import styles from "./Cart.module.css";
 import logo from "../../../../images/logo.png";
 import search from "../../../../icons/search.svg";
 import cart from "../../../../icons/cart.svg";
-import { Badge, Button, IconButton } from "@mui/material";
+import { Badge, Button} from "@mui/material";
 import Profile from "./Profile";
 import { useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";

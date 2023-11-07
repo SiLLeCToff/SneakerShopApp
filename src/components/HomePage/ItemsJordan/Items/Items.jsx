@@ -1,4 +1,3 @@
-import React from "react";
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { getAllSneakers } from "../../../../store/SneakersActions";
@@ -27,7 +26,11 @@ const checkBrands = async () => {
 const handleRedirect = (id) => {
     navigate(`/snacker/${id}`)
 }
+    useEffect(() => {
+        //  checkBrands()
+        // getAllSneakers(dispatch)
 
+    }, [items]);
 
   return (
       <>
