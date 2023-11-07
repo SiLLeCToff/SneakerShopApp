@@ -23,6 +23,7 @@ import {getBasket} from "../store/BasketActions.jsx";
 import axios from "axios";
 import {setBasket} from "../store/basketSlice.jsx";
 import {setBrands} from "../store/brandSlice.jsx";
+import {getAllSneakers} from "../store/SneakersActions.jsx";
 
 const apiUrl = import.meta.env.VITE_REACT_APP_API_URL;
 
@@ -71,6 +72,7 @@ export const AppRouter = () => {
       }
     };
     checkAuthentication();
+    getAllSneakers()
   }, []);
 
   useEffect(() => {
