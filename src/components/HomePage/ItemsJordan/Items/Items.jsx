@@ -26,11 +26,11 @@ const checkBrands = async () => {
 const handleRedirect = (id) => {
     navigate(`/snacker/${id}`)
 }
-    useEffect(() => {
-        //  checkBrands()
-        // getAllSneakers(dispatch)
-
-    }, [items]);
+    // useEffect(() => {
+    //     //  checkBrands()
+    //     // getAllSneakers(dispatch)
+    //
+    // }, [items]);
 
   return (
       <>

@@ -33,11 +33,11 @@ const handleRedirect = (id) => {
 }
 
 
-  useEffect(() => {
-    //  checkBrands()
-    // getAllSneakers(dispatch)
-
-  }, [items]);
+  // useEffect(() => {
+  //   //  checkBrands()
+  //   // getAllSneakers(dispatch)
+  //
+  // }, [items]);
 
   return (
       <>
