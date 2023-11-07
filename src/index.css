@@ -5,7 +5,6 @@
 :root {
   font-family: "Rubik", sans-serif;
 
-  color-scheme: light dark;
   color: black;
   background-color: #ffffff;
 
@@ -67,16 +66,3 @@ button:focus-visible {
   outline: 4px auto -webkit-focus-ring-color;
 } */
 
-@media (prefers-color-scheme: light) {
-  :root {
-    color: black;
-    background-color: #ffffff;
-  }
-  a:hover {
-    cursor: pointer;
-    color: gray;
-  }
-  button {
-    background-color: #f9f9f9;
-  }
-}
