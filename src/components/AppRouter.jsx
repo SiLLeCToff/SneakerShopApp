@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState, lazy , Suspense } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import {
   BrowserRouter as Router,
@@ -9,7 +9,7 @@ import {
 import Admin from "../pages/Admin";
 import Shop from "../pages/Shop";
 import { checkAuth } from "../store/CheckAuthActions";
-import { SHOP_ROUTE } from "../utils/consts";
+// import { SHOP_ROUTE } from "../utils/consts";
 import IsLoading from "./IsLoading/IsLoading";
 import { authRoutes, publicRoutes } from "./routes";
 import {getAllBrands} from "../store/BrandActions.jsx";
@@ -17,6 +17,8 @@ import axios from "axios";
 import {setBasket} from "../store/basketSlice.jsx";
 import {setBrands} from "../store/brandSlice.jsx";
 import {getAllSneakers} from "../store/SneakersActions.jsx";
+
+const SHOP_ROUTE = lazy(()=> import('../utils/consts'))
 
 const apiUrl = import.meta.env.VITE_REACT_APP_API_URL;
 
@@ -104,9 +106,9 @@ export const AppRouter = () => {
           <Route
             key={"/login"}
             path="/login"
-            element={<Navigate to={SHOP_ROUTE} />}
-            exact
-          />)}
+            element={<Suspense><Navigate to={SHOP_ROUTE} /></Suspense>}
+        exact
+      />)}
         {isAuth && (<Route
           key={"/registration"}
         path="/registration"
