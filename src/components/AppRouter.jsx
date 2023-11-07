@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import {
   BrowserRouter as Router,
@@ -8,18 +8,11 @@ import {
 } from "react-router-dom";
 import Admin from "../pages/Admin";
 import Shop from "../pages/Shop";
-import {
-  setLoading,
-  loginSuccess,
-  logoutSuccess,
-  noLoading,
-} from "../store/authSlice";
 import { checkAuth } from "../store/CheckAuthActions";
-import { ADMIN_ROUTE, LOGIN_ROUTE, SHOP_ROUTE } from "../utils/consts";
+import { SHOP_ROUTE } from "../utils/consts";
 import IsLoading from "./IsLoading/IsLoading";
-import { authRoutes, adminRoutes, publicRoutes } from "./routes";
+import { authRoutes, publicRoutes } from "./routes";
 import {getAllBrands} from "../store/BrandActions.jsx";
-import {getBasket} from "../store/BasketActions.jsx";
 import axios from "axios";
 import {setBasket} from "../store/basketSlice.jsx";
 import {setBrands} from "../store/brandSlice.jsx";
