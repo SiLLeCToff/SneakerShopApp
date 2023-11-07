@@ -1,5 +1,4 @@
 
-import React from 'react';
 import Header from "../HomePage/Header/Header.jsx";
 import {Footer} from "../HomePage/Footer/Footer.jsx";
 import {useSelector} from "react-redux";
