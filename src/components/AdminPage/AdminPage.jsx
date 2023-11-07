@@ -49,7 +49,7 @@ export const AdminPage = () => {
         <header className={styles.navbarBlock}>
           <nav className={styles.navbar}>
             <div className={styles.logo}>
-              <img src={logo} alt="LOGO" />
+              <img src={logo} alt="LOGO" className="w-[58px] h-[52px] object-cover  cursor-pointer"/>
               <p className=" font-medium  text-xl hidden xl:flex">
                 SneackerShop ADMIN
               </p>
