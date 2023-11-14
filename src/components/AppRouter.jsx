@@ -1,4 +1,4 @@
-import {lazy, useEffect, useState, Suspense} from "react";
+import {useEffect, useState} from "react";
 import { useDispatch, useSelector } from "react-redux";
 import {
   BrowserRouter as Router,
@@ -16,8 +16,8 @@ import {getAllBrands} from "../store/BrandActions.jsx";
 import {setBasket} from "../store/basketSlice.jsx";
 import {setBrands} from "../store/brandSlice.jsx";
 import {getAllSneakers} from "../store/SneakersActions.jsx";
+import Admin from "../pages/Admin.jsx";
 
-const Admin = lazy(() => import('../pages/Admin'))
 // const Shop = lazy(() => import('../pages/Shop'))
 
 const apiUrl = import.meta.env.VITE_REACT_APP_API_URL;
@@ -82,7 +82,7 @@ export const AppRouter = () => {
 
   const renderProtectedRoutes = () => {
     if (userRole === "ADMIN") {
-      return <Route path="/admin" element={<Suspense fallback={<p>Loading...</p>}><Admin /></Suspense>} />;
+      return <Route path="/admin" element={<Admin />}/>;
     } else {
       return <Route path="/" element={<Shop />} />;
     }
