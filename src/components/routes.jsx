@@ -33,11 +33,11 @@ export const adminRoutes = [
 export const publicRoutes = [
   {
     path: LOGIN_ROUTE,
-    Component: <Suspense fallback={<IsLoading/>><Auth /></Suspense>,
+    Component: <Suspense fallback={<IsLoading/>}><Auth /></Suspense>,
   },
   {
     path: REGISTRATION_ROUTE,
-    Component: <Suspense fallback={<IsLoading/>><Auth /></Suspense>,
+    Component: <Suspense fallback={<IsLoading/>}><Auth /></Suspense>,
   },
   {
     path: SHOP_ROUTE,
@@ -45,18 +45,18 @@ export const publicRoutes = [
   },
   {
       path: SNACKER_ROUTE + "/:id",
-          Component: <Suspense fallback={<IsLoading/>><SnackerPage /></Suspense>,
+          Component: <Suspense fallback={<IsLoading/>}><SnackerPage /></Suspense>,
   },
   {
     path: CATALOG_ROUTE,
-    Component: <Suspense fallback={<IsLoading/>><Catalog/></Suspense>,
+    Component: <Suspense fallback={<IsLoading/>}><Catalog/></Suspense>,
   },
   {
     path: ORDER_ROUTE,
-    Component: <Suspense fallback={<IsLoading/>><Order /></Suspense>,
+    Component: <Suspense fallback={<IsLoading/>}><Order /></Suspense>,
   },
   {
     path: BASKET_ROUTE,
-    Component: <Suspense fallback={<IsLoading/>><Basket /></Suspense>,
+    Component: <Suspense fallback={<IsLoading/>}><Basket /></Suspense>,
   },
 ];
