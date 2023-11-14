@@ -7,11 +7,11 @@ import {
   SNACKER_ROUTE,
 } from "../utils/consts";
 
-
+import Shop from "../pages/Shop.jsx";
 import {lazy, Suspense} from "react";
 
 const Admin = lazy(() => import("../pages/Admin"))
-const Shop = lazy(() => import("../pages/Shop"))
+// const Shop = lazy(() => import("../pages/Shop"))
 const SnackerPage = lazy(() => import("../pages/Sneacker"))
 const Catalog = lazy(() => import("../pages/Catalog.jsx"))
 const Order = lazy(() => import("../pages/Order.jsx"))
@@ -40,7 +40,7 @@ export const publicRoutes = [
   },
   {
     path: SHOP_ROUTE,
-    Component: <Suspense><Shop /></Suspense>,
+    Component: <Shop />,
   },
   {
       path: SNACKER_ROUTE + "/:id",
