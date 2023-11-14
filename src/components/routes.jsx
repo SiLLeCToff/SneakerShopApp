@@ -6,13 +6,17 @@ import {
   SHOP_ROUTE,
   SNACKER_ROUTE,
 } from "../utils/consts";
-import Admin from "../pages/Admin";
-import Auth from "../pages/Auth";
-import Basket from "../pages/Basket";
-import Shop from "../pages/Shop";
-import SnackerPage from "../pages/Sneacker.jsx";
-import Catalog from "../pages/Catalog.jsx";
-import Order from "../pages/Order.jsx";
+
+
+import {lazy, Suspense} from "react";
+
+const Admin = lazy(() => import("../pages/Admin"))
+const Shop = lazy(() => import("../pages/Shop"))
+const SnackerPage = lazy(() => import("../pages/Sneacker"))
+const Catalog = lazy(() => import("../pages/Catalog.jsx"))
+const Order = lazy(() => import("../pages/Order.jsx"))
+const Auth = lazy(() => import("../pages/Auth"))
+const Basket = lazy(() => import("../pages/Basket.jsx"))
 
 export const authRoutes = [
 
@@ -21,37 +25,37 @@ export const authRoutes = [
 export const adminRoutes = [
   {
     path: ADMIN_ROUTE,
-    Component: <Admin />,
+    Component: <Suspense><Admin /></Suspense>,
   },
 ];
 
 export const publicRoutes = [
   {
     path: LOGIN_ROUTE,
-    Component: <Auth />,
+    Component: <Suspense><Auth /></Suspense>,
   },
   {
     path: REGISTRATION_ROUTE,
-    Component: <Auth />,
+    Component: <Suspense><Auth /></Suspense>,
   },
   {
     path: SHOP_ROUTE,
-    Component: <Shop />,
+    Component: <Suspense><Shop /></Suspense>,
   },
   {
-    path: SNACKER_ROUTE + "/:id",
-    Component: <SnackerPage />,
+      path: SNACKER_ROUTE + "/:id",
+          Component: <Suspense><SnackerPage /></Suspense>,
   },
   {
     path: CATALOG_ROUTE,
-    Component: <Catalog/>,
+    Component: <Suspense><Catalog/></Suspense>,
   },
   {
     path: ORDER_ROUTE,
-    Component: <Order />,
+    Component: <Suspense><Order /></Suspense>,
   },
   {
     path: BASKET_ROUTE,
-    Component: <Basket />,
+    Component: <Suspense><Basket /></Suspense>,
   },
 ];
