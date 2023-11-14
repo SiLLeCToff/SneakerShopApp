@@ -9,6 +9,7 @@ import {
 
 import Shop from "../pages/Shop.jsx";
 import {lazy, Suspense} from "react";
+import IsLoading from "./IsLoading/IsLoading.jsx";
 
 const Admin = lazy(() => import("../pages/Admin"))
 // const Shop = lazy(() => import("../pages/Shop"))
@@ -25,18 +26,18 @@ export const authRoutes = [
 export const adminRoutes = [
   {
     path: ADMIN_ROUTE,
-    Component: <Suspense><Admin /></Suspense>,
+    Component: <Suspense fallback={<IsLoading/>}><Admin /></Suspense>,
   },
 ];
 
 export const publicRoutes = [
   {
     path: LOGIN_ROUTE,
-    Component: <Suspense><Auth /></Suspense>,
+    Component: <Suspense fallback={<IsLoading/>><Auth /></Suspense>,
   },
   {
     path: REGISTRATION_ROUTE,
-    Component: <Suspense><Auth /></Suspense>,
+    Component: <Suspense fallback={<IsLoading/>><Auth /></Suspense>,
   },
   {
     path: SHOP_ROUTE,
@@ -44,18 +45,18 @@ export const publicRoutes = [
   },
   {
       path: SNACKER_ROUTE + "/:id",
-          Component: <Suspense><SnackerPage /></Suspense>,
+          Component: <Suspense fallback={<IsLoading/>><SnackerPage /></Suspense>,
   },
   {
     path: CATALOG_ROUTE,
-    Component: <Suspense><Catalog/></Suspense>,
+    Component: <Suspense fallback={<IsLoading/>><Catalog/></Suspense>,
   },
   {
     path: ORDER_ROUTE,
-    Component: <Suspense><Order /></Suspense>,
+    Component: <Suspense fallback={<IsLoading/>><Order /></Suspense>,
   },
   {
     path: BASKET_ROUTE,
-    Component: <Suspense><Basket /></Suspense>,
+    Component: <Suspense fallback={<IsLoading/>><Basket /></Suspense>,
   },
 ];
