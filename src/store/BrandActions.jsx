@@ -8,6 +8,7 @@ export const getAllBrands = async () => {
     const token = localStorage.getItem("token");
     const response = await axios.get(`${apiUrl}api/brand`, {
       headers: {
+        withCredentials: true,
         Authorization: `Bearer ${token}`,
       },
     });

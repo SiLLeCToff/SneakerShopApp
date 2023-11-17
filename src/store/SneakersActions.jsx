@@ -14,6 +14,7 @@ export const getAllSneakers = async (dispatch) => {
     }
     const token = localStorage.getItem("token");
     const response = await axios.get(`${apiUrl}api/snacker`, {
+      withCredentials: true,
       headers: {
         Authorization: `Bearer ${token}`,
       },
@@ -40,6 +41,7 @@ export  const updateSneaker = (id, name, price, brandId) => async () => {
     formData.append("brandId", `${brandId}`);
     const token = localStorage.getItem("token")
     const response = await axios.patch(`${apiUrl}api/snacker`, formData,{
+      withCredentials: true,
       headers: {
         Authorization: `Bearer ${token}`,
       },
@@ -57,6 +59,7 @@ export const deleteSneaker = (id) => async () => {
     const token = localStorage.getItem("token")
     const response = await axios.delete(`${apiUrl}api/snacker/${id}`,
         {
+          withCredentials: true,
           headers: {
             Authorization: `Bearer ${token}`,
           },
